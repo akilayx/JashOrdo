@@ -407,8 +407,19 @@ function toEmbedUrl(videoId) {
 // ─────────────────────────────────────────────
 function openInternships() {
   showSection('internships-page');
-  initFilters();
   initGlobalSearch();
+}
+
+function openInternshipsWithSearch() {
+  openInternships();
+  setTimeout(() => {
+    const searchInput = document.getElementById('searchInput');
+    const globalInput = document.getElementById('globalSearch');
+    if (searchInput && globalInput) {
+      globalInput.value = searchInput.value;
+      globalInput.dispatchEvent(new Event('input'));
+    }
+  }, 100);
 }
 
 // ─────────────────────────────────────────────
@@ -441,10 +452,10 @@ function initGlobalSearch() {
   if (!input) return;
   input.addEventListener('input', () => {
     const query = input.value.toLowerCase().trim();
-    const cards = document.querySelectorAll('#allInternships .card');
-    cards.forEach((card) => {
-      const text = card.textContent.toLowerCase();
-      card.style.display = text.includes(query) ? '' : 'none';
+    const items = document.querySelectorAll('#allInternships li');
+    items.forEach((item) => {
+      const text = item.textContent.toLowerCase();
+      item.style.display = text.includes(query) ? '' : 'none';
     });
   });
 }
@@ -477,11 +488,9 @@ function openSimulation(track) {
     return;
   }
 
- state.currentSimulation = sim;
- state.taskStep = 0;
- state.answers = [];
-
- loadSimulationAnswers();
+  state.currentSimulation = sim;
+  state.taskStep = 0;
+  state.answers = [];
 
   showSection('simulation');
 
@@ -546,11 +555,9 @@ function nextTask() {
   // Сохраняем ответ
   const ta = document.querySelector('#simTaskInput textarea');
   const answer = ta ? ta.value.trim() : '';
- state.answers.push(answer);
-saveSimulationAnswers();
-
-state.taskStep++;
-renderTask();
+  state.answers.push(answer);
+  state.taskStep++;
+  renderTask();
 }
 
 function showSimComplete() {
@@ -749,7 +756,7 @@ function initActions() {
 
     switch (action) {
       case 'open-internships':
-        openInternships();
+        openInternshipsWithSearch();
         break;
 
       case 'open-simulation':
@@ -780,99 +787,6 @@ function initActions() {
         break;
     }
   });
-}
-
-
-// ─────────────────────────────────────────────
-// ДОПОЛНИТЕЛЬНЫЕ ФУНКЦИИ
-// ─────────────────────────────────────────────
-
-// 🌙 DARK MODE
-function initDarkMode() {
-  const btn = document.getElementById('themeToggle');
-  if (!btn) return;
-
-  btn.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-
-    const isDark = document.body.classList.contains('dark');
-    localStorage.setItem('theme', isDark);
-  });
-
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'true') {
-    document.body.classList.add('dark');
-  }
-}
-
-// 🔝 SCROLL TO TOP BUTTON
-function initScrollTop() {
-  const btn = document.createElement('button');
-  btn.className = 'scroll-top';
-  btn.textContent = '↑';
-  btn.style.display = 'none';
-
-  document.body.appendChild(btn);
-
-  btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
-      btn.style.display = 'block';
-    } else {
-      btn.style.display = 'none';
-    }
-  });
-}
-
-// 🔔 TOAST УВЕДОМЛЕНИЯ
-function showToast(message) {
-  const toast = document.createElement('div');
-  toast.className = 'toast';
-  toast.textContent = message;
-
-  document.body.appendChild(toast);
-
-  setTimeout(() => {
-    toast.classList.add('toast-show');
-  }, 100);
-
-  setTimeout(() => {
-    toast.remove();
-  }, 3000);
-}
-
-// 📊 СЧЕТЧИК СТАЖИРОВОК
-function updateInternshipCount() {
-  const cards = document.querySelectorAll('#allInternships .card');
-
-  let visible = 0;
-
-  cards.forEach(card => {
-    if (card.style.display !== 'none') {
-      visible++;
-    }
-  });
-
-  const counter = document.getElementById('internshipCount');
-
-  if (counter) {
-    counter.textContent = `Найдено: ${visible}`;
-  }
-}
-
-// 💾 СОХРАНЕНИЕ ОТВЕТОВ СИМУЛЯЦИИ
-function saveSimulationAnswers() {
-  localStorage.setItem('simAnswers', JSON.stringify(state.answers));
-}
-
-function loadSimulationAnswers() {
-  const saved = localStorage.getItem('simAnswers');
-  if (saved) {
-    state.answers = JSON.parse(saved);
-  }
 }
 
 // ─────────────────────────────────────────────

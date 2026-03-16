@@ -39,7 +39,6 @@
     <!-- ========== HERO ========== -->
     <section class="hero" id="home" aria-labelledby="hero-heading">
       <div class="hero__bg">
-        <img src="images/Технологии-photo.jpg" alt="" role="presentation" class="hero__bg-img">
         <div class="hero__bg-overlay"></div>
         <div class="hero__bg-pattern"></div>
       </div>
@@ -50,29 +49,10 @@
           Твой первый<br>карьерный шаг
         </h1>
         <p class="animate-up animate-delay-1">
-          Пройди симуляцию стажировки → получи реальный опыт → получи оффер.<br>
-          Как Forage — но для нашего рынка.
+          Пройди симуляцию стажировки → получи реальный опыт → получи оффер.
         </p>
 
-        <!-- Счётчики -->
-        <div class="hero__stats animate-up animate-delay-2">
-          <div class="hero__stat">
-            <span class="hero__stat-num" data-count="500">0</span><span>+</span>
-            <span class="hero__stat-label">участников</span>
-          </div>
-          <div class="hero__stat-divider"></div>
-          <div class="hero__stat">
-            <span class="hero__stat-num" data-count="20">0</span><span>+</span>
-            <span class="hero__stat-label">стажировок</span>
-          </div>
-          <div class="hero__stat-divider"></div>
-          <div class="hero__stat">
-            <span class="hero__stat-num" data-count="15">0</span><span>+</span>
-            <span class="hero__stat-label">компаний</span>
-          </div>
-        </div>
-
-        <div class="hero__actions animate-up animate-delay-3">
+        <div class="hero__actions animate-up animate-delay-2">
           <button type="button" class="btn btn--primary btn--large" data-action="open-internships">
             Найти стажировку
           </button>
@@ -92,9 +72,9 @@
     <section id="how-it-works" class="section section--alt" aria-labelledby="how-heading">
       <div class="container">
         <div class="section__head">
-          <span class="section__tag">Модель платформы</span>
+          <span class="section__tag">Наша уникальность</span>
           <h2 id="how-heading">Как работает Jash Ordo</h2>
-          <p class="section__sub">Вдохновлено моделью <strong>Forage</strong> — адаптировано для Кыргызстана</p>
+          <p class="section__sub">Первая в Кыргызстане платформа симуляций стажировок — ваш мост от учебы к успешной карьере в IT, маркетинге и финтехе</p>
         </div>
 
         <div class="how-grid">
@@ -211,14 +191,6 @@
           <h2 id="all-heading">20+ стажировок и программ</h2>
         </div>
 
-        <div class="filter-bar" role="group" aria-label="Фильтр по категориям">
-          <button type="button" class="filter-btn active" data-filter="all">Все</button>
-          <button type="button" class="filter-btn" data-filter="it">IT</button>
-          <button type="button" class="filter-btn" data-filter="business">Бизнес</button>
-          <button type="button" class="filter-btn" data-filter="creative">Дизайн</button>
-          <button type="button" class="filter-btn" data-filter="school">Школьникам</button>
-        </div>
-
         <div role="search">
           <label for="globalSearch" class="sr-only">Поиск профессии</label>
           <input
@@ -229,273 +201,57 @@
           >
         </div>
 
-        <ul class="cards cards--wide" id="allInternships" role="list">
+        <div id="allInternships">
+          <h3>Стажировки</h3>
+          <h4>Популярные направления</h4>
 
-          <!-- IT -->
-          <li class="card card--hover" data-category="it">
-            <div class="card__header">
-              <span class="card__company">MBank</span>
-              <span class="card__badge card__badge--sim">Симуляция</span>
-            </div>
-            <h3>Frontend Developer</h3>
-            <p>Верстай реальные страницы MBank. HTML, CSS, базовый JS.</p>
-            <ul class="card__tags"><li>HTML</li><li>CSS</li><li>JS</li></ul>
-            <button type="button" class="btn btn--primary" data-action="open-simulation" data-track="Frontend — MBank">
-              Пройти симуляцию
-            </button>
-          </li>
-
-          <li class="card card--hover" data-category="it">
-            <div class="card__header">
-              <span class="card__company">IT Agency</span>
-              <span class="card__badge card__badge--cv">CV + контакты</span>
-            </div>
-            <h3>Backend Developer</h3>
-            <p>Python / Django. Работа с API и базами данных.</p>
-            <ul class="card__tags"><li>Python</li><li>Django</li><li>SQL</li></ul>
-            <button type="button" class="btn btn--primary" data-action="open-apply" data-company="IT Agency — Backend">
-              Подать заявку
-            </button>
-          </li>
-
-          <li class="card card--hover" data-category="it">
-            <div class="card__header">
-              <span class="card__company">MBank</span>
-              <span class="card__badge card__badge--sim">Симуляция</span>
-            </div>
-            <h3>Data Analyst</h3>
-            <p>Анализ транзакций, дашборды в Excel и SQL-запросы.</p>
-            <ul class="card__tags"><li>Excel</li><li>SQL</li><li>Power BI</li></ul>
-            <button type="button" class="btn btn--primary" data-action="open-simulation" data-track="Data Analyst — MBank">
-              Пройти симуляцию
-            </button>
-          </li>
-
-          <li class="card card--hover" data-category="it">
-            <div class="card__header">
-              <span class="card__company">Салым Финанс</span>
-              <span class="card__badge card__badge--sim">Симуляция</span>
-            </div>
-            <h3>Fintech Analyst</h3>
-            <p>Финансовые продукты, риск-модели, работа с данными клиентов.</p>
-            <ul class="card__tags"><li>Финтех</li><li>Excel</li><li>Аналитика</li></ul>
-            <button type="button" class="btn btn--primary" data-action="open-simulation" data-track="Fintech — Салым Финанс">
-              Пройти симуляцию
-            </button>
-          </li>
-
-          <li class="card card--hover" data-category="it">
-            <div class="card__header">
-              <span class="card__company">Megaline</span>
-              <span class="card__badge card__badge--cv">CV + контакты</span>
-            </div>
-            <h3>IT Support</h3>
-            <p>Поддержка пользователей, базовое сетевое администрирование.</p>
-            <ul class="card__tags"><li>Сети</li><li>Windows</li><li>Linux</li></ul>
-            <button type="button" class="btn btn--primary" data-action="open-apply" data-company="Megaline — IT Support">
-              Подать заявку
-            </button>
-          </li>
-
-          <li class="card card--hover" data-category="it">
-            <div class="card__header">
-              <span class="card__company">Jash Ordo Lab</span>
-              <span class="card__badge card__badge--sim">Симуляция</span>
-            </div>
-            <h3>QA Tester</h3>
-            <p>Тестирование мобильных приложений, написание баг-репортов.</p>
-            <ul class="card__tags"><li>QA</li><li>Тестирование</li><li>Jira</li></ul>
-            <button type="button" class="btn btn--primary" data-action="open-simulation" data-track="QA Tester">
-              Пройти симуляцию
-            </button>
-          </li>
-
-          <!-- Business -->
-          <li class="card card--hover" data-category="business">
-            <div class="card__header">
-              <span class="card__company">IT Agency</span>
-              <span class="card__badge card__badge--sim">Симуляция</span>
-            </div>
-            <h3>Маркетолог / SMM</h3>
-            <p>Стратегия в Instagram, анализ аудитории, рекламные кампании.</p>
-            <ul class="card__tags"><li>SMM</li><li>Таргет</li><li>Аналитика</li></ul>
-            <button type="button" class="btn btn--primary" data-action="open-simulation" data-track="Маркетинг — IT Agency">
-              Пройти симуляцию
-            </button>
-          </li>
-
-          <li class="card card--hover" data-category="business">
-            <div class="card__header">
-              <span class="card__company">Kumtor Gold</span>
-              <span class="card__badge card__badge--cv">CV + контакты</span>
-            </div>
-            <h3>HR-ассистент</h3>
-            <p>Рекрутинг, онбординг, работа с кандидатами.</p>
-            <ul class="card__tags"><li>HR</li><li>Рекрутинг</li><li>Excel</li></ul>
-            <button type="button" class="btn btn--primary" data-action="open-apply" data-company="Kumtor Gold — HR">
-              Подать заявку
-            </button>
-          </li>
-
-          <li class="card card--hover" data-category="business">
-            <div class="card__header">
-              <span class="card__company">Optima Bank</span>
-              <span class="card__badge card__badge--sim">Симуляция</span>
-            </div>
-            <h3>Финансовый аналитик</h3>
-            <p>Бюджетирование, финансовые отчёты, работа с Excel-моделями.</p>
-            <ul class="card__tags"><li>Финансы</li><li>Excel</li><li>Отчётность</li></ul>
-            <button type="button" class="btn btn--primary" data-action="open-simulation" data-track="Финансы — Optima Bank">
-              Пройти симуляцию
-            </button>
-          </li>
-
-          <li class="card card--hover" data-category="business">
-            <div class="card__header">
-              <span class="card__company">Beeline KG</span>
-              <span class="card__badge card__badge--cv">CV + контакты</span>
-            </div>
-            <h3>Менеджер по продажам</h3>
-            <p>B2B продажи, работа с клиентами, CRM-системы.</p>
-            <ul class="card__tags"><li>Продажи</li><li>CRM</li><li>Переговоры</li></ul>
-            <button type="button" class="btn btn--primary" data-action="open-apply" data-company="Beeline KG — Продажи">
-              Подать заявку
-            </button>
-          </li>
-
-          <li class="card card--hover" data-category="business">
-            <div class="card__header">
-              <span class="card__company">Jash Ordo Lab</span>
-              <span class="card__badge card__badge--sim">Симуляция</span>
-            </div>
-            <h3>Project Manager</h3>
-            <p>Планирование спринтов, работа с командой, Agile-методологии.</p>
-            <ul class="card__tags"><li>PM</li><li>Agile</li><li>Trello</li></ul>
-            <button type="button" class="btn btn--primary" data-action="open-simulation" data-track="Project Manager">
-              Пройти симуляцию
-            </button>
-          </li>
-
-          <!-- Creative -->
-          <li class="card card--hover" data-category="creative">
-            <div class="card__header">
-              <span class="card__company">IT Agency</span>
-              <span class="card__badge card__badge--sim">Симуляция</span>
-            </div>
-            <h3>UI/UX Designer</h3>
-            <p>Figma, прототипирование, пользовательские исследования.</p>
-            <ul class="card__tags"><li>Figma</li><li>UX</li><li>Прототип</li></ul>
-            <button type="button" class="btn btn--primary" data-action="open-simulation" data-track="UI/UX Design">
-              Пройти симуляцию
-            </button>
-          </li>
-
-          <li class="card card--hover" data-category="creative">
-            <div class="card__header">
-              <span class="card__company">Creative Bureau KG</span>
-              <span class="card__badge card__badge--cv">CV + контакты</span>
-            </div>
-            <h3>Графический дизайнер</h3>
-            <p>Брендинг, айдентика, работа с Illustrator и Photoshop.</p>
-            <ul class="card__tags"><li>Illustrator</li><li>Photoshop</li><li>Брендинг</li></ul>
-            <button type="button" class="btn btn--primary" data-action="open-apply" data-company="Creative Bureau KG — Дизайн">
-              Подать заявку
-            </button>
-          </li>
-
-          <li class="card card--hover" data-category="creative">
-            <div class="card__header">
-              <span class="card__company">Jash Ordo Lab</span>
-              <span class="card__badge card__badge--sim">Симуляция</span>
-            </div>
-            <h3>Контент-менеджер</h3>
-            <p>Написание текстов, SEO, работа с редакционным планом.</p>
-            <ul class="card__tags"><li>Контент</li><li>SEO</li><li>Копирайтинг</li></ul>
-            <button type="button" class="btn btn--primary" data-action="open-simulation" data-track="Контент-менеджер">
-              Пройти симуляцию
-            </button>
-          </li>
-
-          <li class="card card--hover" data-category="creative">
-            <div class="card__header">
-              <span class="card__company">Media House KG</span>
-              <span class="card__badge card__badge--cv">CV + контакты</span>
-            </div>
-            <h3>Видеограф / Монтажёр</h3>
-            <p>Съёмка, монтаж, работа с Premiere Pro и After Effects.</p>
-            <ul class="card__tags"><li>Видео</li><li>Монтаж</li><li>Premiere</li></ul>
-            <button type="button" class="btn btn--primary" data-action="open-apply" data-company="Media House KG — Видео">
-              Подать заявку
-            </button>
-          </li>
-
-          <!-- School -->
-          <li class="card card--hover" data-category="school">
-            <div class="card__header">
-              <span class="card__company">Jash Ordo</span>
-              <span class="card__badge card__badge--school">14–17 лет</span>
-            </div>
-            <h3>Junior IT — старт</h3>
-            <p>Первые шаги в программировании: Scratch, основы HTML. Для 8–9 классов.</p>
-            <ul class="card__tags"><li>Scratch</li><li>HTML</li><li>Логика</li></ul>
-            <button type="button" class="btn btn--primary" data-action="open-simulation" data-track="Junior IT">
-              Начать программу
-            </button>
-          </li>
-
-          <li class="card card--hover" data-category="school">
-            <div class="card__header">
-              <span class="card__company">Jash Ordo</span>
-              <span class="card__badge card__badge--school">14–17 лет</span>
-            </div>
-            <h3>Юный маркетолог</h3>
-            <p>Как работает реклама, создай свой мини-проект для соцсетей.</p>
-            <ul class="card__tags"><li>SMM</li><li>Canva</li><li>Идеи</li></ul>
-            <button type="button" class="btn btn--primary" data-action="open-simulation" data-track="Юный маркетолог">
-              Начать программу
-            </button>
-          </li>
-
-          <li class="card card--hover" data-category="school">
-            <div class="card__header">
-              <span class="card__company">Jash Ordo</span>
-              <span class="card__badge card__badge--school">14–17 лет</span>
-            </div>
-            <h3>Финансовая грамотность</h3>
-            <p>Бюджет, накопления, инвестиции — базовый курс для старшеклассников.</p>
-            <ul class="card__tags"><li>Финансы</li><li>Бюджет</li><li>Практика</li></ul>
-            <button type="button" class="btn btn--primary" data-action="open-simulation" data-track="Финграмотность">
-              Начать программу
-            </button>
-          </li>
-
-          <li class="card card--hover" data-category="school">
-            <div class="card__header">
-              <span class="card__company">MBank Junior</span>
-              <span class="card__badge card__badge--school">16–18 лет</span>
-            </div>
-            <h3>Банковское дело — старт</h3>
-            <p>Как работает банк изнутри. Симуляция задач операционного отдела.</p>
-            <ul class="card__tags"><li>Банкинг</li><li>Симуляция</li><li>Excel</li></ul>
-            <button type="button" class="btn btn--primary" data-action="open-simulation" data-track="Банковское дело — Junior">
-              Пройти симуляцию
-            </button>
-          </li>
-
-          <li class="card card--hover" data-category="school">
-            <div class="card__header">
-              <span class="card__company">Jash Ordo</span>
-              <span class="card__badge card__badge--school">14–17 лет</span>
-            </div>
-            <h3>Предпринимательство</h3>
-            <p>Придумай бизнес-идею, посчитай экономику, защити перед жюри.</p>
-            <ul class="card__tags"><li>Бизнес</li><li>Питч</li><li>Идея</li></ul>
-            <button type="button" class="btn btn--primary" data-action="open-simulation" data-track="Предпринимательство">
-              Начать программу
-            </button>
-          </li>
-
-        </ul>
+          <ol>
+            <li>
+              <strong>Data Analytics (МБАНК — весенняя программа)</strong><br>
+              Для кого: школьники 9–11 классов (15–18 лет)<br>
+              Формат: онлайн + мини-проект<br>
+              Период: весенние каникулы (март–апрель)<br>
+              Дедлайн подачи: 1 марта<br>
+              Критерии:<br>
+              - пройти виртуальную стажировку по Data Analytics на платформе Jash Ordo<br>
+              - базовые знания Excel или Google Sheets<br>
+              - интерес к анализу данных
+            </li>
+            <li>
+              <strong>Web Development Internship</strong><br>
+              Для кого: школьники и студенты (16–22 лет)<br>
+              Формат: онлайн / гибридный<br>
+              Продолжительность: 4–6 недель<br>
+              Дедлайн подачи: 20 февраля<br>
+              Критерии:<br>
+              - завершить виртуальную стажировку по веб-разработке на Jash Ordo<br>
+              - базовые знания HTML, CSS, JavaScript<br>
+              - портфолио или небольшой проект
+            </li>
+            <li>
+              <strong>Marketing & Digital Strategy</strong><br>
+              Для кого: студенты (17–23 лет)<br>
+              Формат: онлайн<br>
+              Продолжительность: 1 месяц<br>
+              Дедлайн: 10 марта<br>
+              Критерии:<br>
+              - пройти симуляцию маркетинговой стажировки на Jash Ordo<br>
+              - навыки анализа аудитории<br>
+              - интерес к рекламе и соцсетям
+            </li>
+            <li>
+              <strong>AI & Technology Exploration Program</strong><br>
+              Для кого: школьники 10–11 классов<br>
+              Формат: онлайн-лагерь на каникулах<br>
+              Продолжительность: 2 недели<br>
+              Дедлайн: 15 марта<br>
+              Критерии:<br>
+              - пройти виртуальную AI-стажировку на Jash Ordo<br>
+              - базовое понимание технологий<br>
+              - мотивационное эссе
+            </li>
+          </ol>
+        </div>
 
         <div class="page-actions">
           <button type="button" class="btn btn--back" data-action="go-back">← Назад</button>
@@ -612,94 +368,40 @@
     </section>
 
     <!-- ========== ИСТОРИИ ========== -->
-    <section id="stories" class="section" aria-labelledby="stories-heading">
-      <div class="container">
-        <div class="section__head">
-          <span class="section__tag">Участники</span>
-          <h2 id="stories-heading">Истории участников</h2>
-          <p class="section__sub">Реальные люди, реальные результаты</p>
-        </div>
+    <section id="stories">
 
-        <!-- Баннер офис -->
-        <div class="stories-banner">
-          <img src="images/Офис-photo.jpg" alt="Команда Jash Ordo" loading="lazy">
-          <div class="stories-banner__text">
-            <span>Уже более</span>
-            <strong>500+ участников</strong>
-            <span>прошли стажировки через платформу</span>
-          </div>
-        </div>
+    <h2>Истории студентов</h2>
 
-        <ul class="stories-list" role="list">
+    <div class="stories-container">
 
-          <li class="story">
-            <div class="story__photo-wrap">
-              <img
-                src="images/Алина-photo.jpg"
-                alt="Алина — участница IT-стажировки"
-                width="120" height="120"
-                loading="lazy"
-              >
-              <span class="story__role-badge">Web / IT</span>
-            </div>
-            <div class="story__body">
-              <h3>Алина, 11 класс · Бишкек</h3>
-              <div class="story__quote">"Симуляция дала мне реальные задачи — я верстала страницы как настоящий разработчик"</div>
-              <p>Начала с виртуальной симуляции: верстала страницы, работала с базовой логикой JavaScript, читала технические задания.</p>
-              <p><em>После симуляции получила приглашение на онлайн-стажировку в IT-команду.</em></p>
-              <div class="story__result">
-                <span class="story__result-icon">✅</span>
-                <span>Получила оффер на стажировку</span>
-              </div>
-            </div>
-          </li>
+    <div class="story">
 
-          <li class="story">
-            <div class="story__photo-wrap">
-              <img
-                src="images/Даниил-photo.jpg"
-                alt="Даниил — участник маркетинговой стажировки"
-                width="120" height="120"
-                loading="lazy"
-              >
-              <span class="story__role-badge story__role-badge--marketing">Маркетинг</span>
-            </div>
-            <div class="story__body">
-              <h3>Даниил, 10 класс</h3>
-              <div class="story__quote">"Я не знал кем хочу стать — теперь точно знаю: маркетолог"</div>
-              <p>Прошёл маркетинговую симуляцию: анализировал аудиторию, разрабатывал рекламные идеи, изучал digital-маркетинг.</p>
-              <p><em>Попал на месячную стажировку в маркетинговый отдел и поработал с реальными кейсами.</em></p>
-              <div class="story__result">
-                <span class="story__result-icon">✅</span>
-                <span>Месяц реальной стажировки</span>
-              </div>
-            </div>
-          </li>
+    <img src="images/Алина-photo.jpg">
 
-          <li class="story">
-            <div class="story__photo-wrap">
-              <img
-                src="images/Айжан-photo.jpg"
-                alt="Айжан — участница финтех-стажировки"
-                width="120" height="120"
-                loading="lazy"
-              >
-              <span class="story__role-badge story__role-badge--fintech">Финтех</span>
-            </div>
-            <div class="story__body">
-              <h3>Айжан, 3 курс</h3>
-              <div class="story__quote">"Симуляция заменила мне год теории — я сразу работала с реальными данными"</div>
-              <p>Прошла финансово-аналитическую симуляцию: изучала основы финтеха, работу с данными и финансовыми продуктами.</p>
-              <p><em>Получила стажировку в финансовой компании и работает с реальными бизнес-задачами.</em></p>
-              <div class="story__result">
-                <span class="story__result-icon">✅</span>
-                <span>Стажировка в финтех-компании</span>
-              </div>
-            </div>
-          </li>
+    <h3>Алина — IT стажировка</h3>
+    <p>Алина, ученица 11 класса, нашла стажировку через Jash Ordo и получила возможность поработать над веб-проектами. Благодаря этой возможности она приобрела практический опыт, развила свои навыки и смогла попробовать себя в реальной рабочей среде..</p>
+    </div>
 
-        </ul>
-      </div>
+
+    <div class="story">
+
+    <img src="images/Даниил-photo.jpg">
+
+    <h3>Даниил — маркетинг</h3>
+    <p>Даниил, ученик 10 класса, в своём возрасте смог попасть на стажировку и проработал там целый месяц. За это время он участвовал в рекламных кампаниях и научился анализировать аудиторию, получив ценный практический опыт в маркетинге и работе с проектами.</p>
+    </div>
+
+
+    <div class="story">
+
+    <img src="images/Айжан-photo.jpg">
+
+    <h3>Айжан — финтех</h3>
+    <p>Айжан, студентка 3 курса, прошла стажировку в финансовой компании и получила первый опыт.</p>
+    </div>
+
+    </div>
+
     </section>
 
     <!-- ========== ОБУЧЕНИЕ ========== -->
@@ -707,16 +409,24 @@
       <div class="container">
         <div class="section__head">
           <span class="section__tag">Карьерные ресурсы</span>
-          <h2 id="learning-heading">Подготовься к стажировке</h2>
-          <p class="section__sub">Нажми на карточку — откроется страница с видео и советами</p>
-        </div>
-
-        <!-- Баннер обучения -->
-        <div class="learning-banner">
-          <img src="images/Обучение-photo.jpg" alt="Обучение и развитие" loading="lazy">
-          <div class="learning-banner__overlay">
-            <h3>Бесплатные материалы для старта</h3>
-            <p>CV, Cover Letter, подготовка к интервью и LinkedIn</p>
+          <h2 id="learning-heading">Бесплатные материалы для старта</h2>
+          <div class="learning-nav">
+            <button type="button" class="learning-nav__btn" data-action="open-learning" data-topic="cv">
+              <span class="learning-nav__icon">📄</span>
+              <span>CV</span>
+            </button>
+            <button type="button" class="learning-nav__btn" data-action="open-learning" data-topic="cover">
+              <span class="learning-nav__icon">✉️</span>
+              <span>Cover Letter</span>
+            </button>
+            <button type="button" class="learning-nav__btn" data-action="open-learning" data-topic="interview">
+              <span class="learning-nav__icon">🎤</span>
+              <span>Подготовка к интервью</span>
+            </button>
+            <button type="button" class="learning-nav__btn" data-action="open-learning" data-topic="linkedin">
+              <span class="learning-nav__icon">🔗</span>
+              <span>LinkedIn</span>
+            </button>
           </div>
         </div>
 
@@ -824,10 +534,6 @@
             <h2 id="contact-heading">Связаться с нами</h2>
             <p>Есть вопросы о стажировках, симуляциях или партнёрстве? Напиши нам — ответим быстро.</p>
 
-            <div class="contact-info__img-wrap">
-              <img src="images/ethno-pattern.jpg" alt="Jash Ordo офис" loading="lazy">
-            </div>
-
             <ul class="contact-info__list">
               <li>
                 <span class="contact-info__icon">📍</span>
@@ -902,7 +608,6 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <span class="logo__ornament">❧</span>
         <strong>Jash Ordo</strong>
         <p>Карьерный старт для молодёжи Кыргызстана</p>
         <div class="footer__social">

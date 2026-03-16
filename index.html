@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jash Ordo — старт карьеры</title>
+
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
+
+<style>
+/* небольшая интерактивность прямо тут */
+.fade { animation: fadeIn 0.6s ease; }
+@keyframes fadeIn {
+from {opacity:0; transform:translateY(20px)}
+to {opacity:1; transform:none}
+}
+.progress {
+height: 10px;
+background: #eee;
+border-radius: 6px;
+overflow: hidden;
+margin: 15px 0;
+}
+.progress div {
+height: 100%;
+width: 0%;
+background: #c9a24d;
+transition: 0.4s;
+}
+</style>
+</head>
+
+<body>
+
+<header class="header fade">
+<nav class="navbar">
+<h2 class="logo">Jash Ordo</h2>
+<ul class="nav-links">
+<li><a href="#home">Главная</a></li>
+<li><a href="#internships">Стажировки</a></li>
+<li><a href="#stories">Истории</a></li>
+<li><a href="#learning">Обучение</a></li>
+<li><a href="#contact">Контакты</a></li>
+</ul>
+</nav>
+
+<div class="hero" id="home">
+<h1>Jash Ordo</h1>
+<p>Симуляции стажировок → опыт → офферы.  
+Карьерный старт для молодежи.</p>
+<button onclick="openInternships()">Начать</button>
+</div>
+</header>
+
+<!-- ========== СТАЖИРОВКИ ========= -->
+<section id="internships" class="fade">
+<h2>Популярные направления</h2>
+
+<div class="search-box">
+<input id="searchInput" placeholder="Хочу стать...">
+<button onclick="openInternships()">Поиск</button>
+</div>
+
+<div class="cards">
+<div class="card">
+<h3>Frontend Developer</h3>
+<p>HTML / CSS / JS</p>
+<button class="applyBtn">Смотреть</button>
+</div>
+
+<div class="card">
+<h3>Маркетолог</h3>
+<p>SMM / аналитика</p>
+<button class="applyBtn">Смотреть</button>
+</div>
+
+<div class="card">
+<h3>Data Analyst</h3>
+<p>Excel / SQL</p>
+<button class="applyBtn">Смотреть</button>
+</div>
+</div>
+</section>
+
+<!-- ========== ВСЕ СТАЖИРОВКИ ========= -->
+<section id="internships-page" class="hidden fade">
+<h1>Все возможности</h1>
+<input id="globalSearch" placeholder="Поиск профессии">
+
+<div class="cards" id="allInternships">
+
+<div class="card">
+<h3>Frontend — MBank</h3>
+<p><b>Модель:</b> Симуляция</p>
+<button onclick="openSimulation('Frontend')">Пройти симуляцию</button>
+</div>
+
+<div class="card">
+<h3>Маркетинг — IT Agency</h3>
+<p><b>Модель:</b> CV + контакты</p>
+<button onclick="openApply()">Подать заявку</button>
+</div>
+
+<div class="card">
+<h3>Программа для школьников</h3>
+<p>14–17 лет</p>
+<button onclick="openSimulation('School')">Начать</button>
+</div>
+
+</div>
+
+<button onclick="goBack()">← Назад</button>
+</section>
+
+<!-- ========== СИМУЛЯЦИЯ ========= -->
+<section id="simulation" class="hidden fade">
+<h1 id="simTitle"></h1>
+
+<div class="progress"><div id="progressBar"></div></div>
+
+<p id="taskText"></p>
+<button onclick="nextTask()">Выполнить задание</button>
+<button onclick="goBack()">← Назад</button>
+</section>
+
+<!-- ========== ИСТОРИИ ========= -->
+<section id="stories">
+  <h2>Истории участников</h2>
+
+  <div class="stories-container">
+
+    <div class="story">
+      <img src="images/Алина-photo.jpg" alt="Алина — IT стажировка">
+      <h3>Алина — Web / IT</h3>
+      <p>
+        <strong>Алина (11 класс, Бишкек)</strong> — одна из первых участниц платформы Jash Ordo.
+        Она начала с <em>виртуальной стажировки в формате симуляции</em>, где выполняла задания,
+        максимально приближённые к реальной работе веб-разработчика:
+        верстала страницы, работала с базовой логикой JavaScript и училась читать технические задания.
+        <br><br>
+        <em>(После успешного прохождения симуляции Алина получила приглашение на онлайн-стажировку
+        в IT-команду и сейчас продолжает развивать свои навыки в сфере веб-разработки.)</em>
+      </p>
+    </div>
+
+    <div class="story">
+      <img src="images/Даниил-photo.jpg" alt="Даниил — маркетинг">
+      <h3>Даниил — Маркетинг</h3>
+      <p>
+        <strong>Даниил (10 класс)</strong> долго не понимал, какая профессия ему подойдёт.
+        Через Jash Ordo он прошёл <em>маркетинговую симуляцию</em>, где анализировал аудиторию,
+        придумывал рекламные идеи и изучал основы digital-маркетинга.
+        <br><br>
+        <em>(После симуляции Даниил попал на месячную стажировку в маркетинговый отдел,
+        где впервые поработал с реальными кейсами и рекламными кампаниями.)</em>
+      </p>
+    </div>
+
+    <div class="story">
+      <img src="images/Айжан-photo.jpg" alt="Айжан — финтех">
+      <h3>Айжан — Финтех</h3>
+      <p>
+        <strong>Айжан (студентка 3 курса)</strong> интересовалась финансами, но не имела практического опыта.
+        На платформе она прошла <em>финансово-аналитическую симуляцию</em>, где изучала основы финтеха,
+        работу с данными и финансовыми продуктами.
+        <br><br>
+        <em>(Успешное прохождение симуляции помогло Айжан получить стажировку в финансовой компании,
+        где она сейчас работает с реальными бизнес-задачами.)</em>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== СТРАНИЦА ИСТОРИИ ========= -->
+<section id="storyPage" class="hidden fade">
+<h1 id="storyTitle"></h1>
+<p id="storyText"></p>
+<button onclick="goBack()">← Назад</button>
+</section>
+
+<!-- ========== ОБУЧЕНИЕ ========= -->
+<section id="learning" class="fade">
+<h2>Обучение</h2>
+
+<div class="cards">
+<div class="card">
+<h3>CV</h3>
+<button onclick="openLearning('cv')">Открыть</button>
+</div>
+<div class="card">
+<h3>Cover Letter</h3>
+<button onclick="openLearning('cover')">Открыть</button>
+</div>
+<div class="card">
+<h3>Интервью</h3>
+<button onclick="openLearning('interview')">Открыть</button>
+</div>
+</div>
+</section>
+
+<section id="learning-page" class="hidden fade">
+<h1 id="learningTitle"></h1>
+<iframe id="learningVideo" width="100%" height="400"></iframe>
+<button onclick="goBack()">← Назад</button>
+</section>
+
+<!-- ========== КОНТАКТ ========= -->
+<section id="contact" class="fade">
+<h2>Связь</h2>
+<form id="contactForm">
+<input placeholder="Имя" required>
+<input type="email" placeholder="Email" required>
+<input type="file">
+<button>Отправить</button>
+</form>
+</section>
+
+<footer>
+<p>Jash Ordo © 2026</p>
+</footer>
+
+<script>
+let taskStep = 0;
+const tasks = [
+"Задание 1: ознакомься с задачей",
+"Задание 2: выполни мини-кейс",
+"Задание 3: отправь решение"
+];
+
+function openSimulation(title){
+hideAll();
+document.getElementById("simulation").style.display="block";
+document.getElementById("simTitle").innerText = title + " — симуляция";
+taskStep = 0;
+updateTask();
+}
+
+function nextTask(){
+taskStep++;
+updateTask();
+}
+
+function updateTask(){
+const bar = document.getElementById("progressBar");
+if(taskStep < tasks.length){
+document.getElementById("taskText").innerText = tasks[taskStep];
+bar.style.width = ((taskStep)/tasks.length*100)+"%";
+}else{
+document.getElementById("taskText").innerText =
+"Симуляция завершена 🎉 Вы готовы подать заявку!";
+bar.style.width="100%";
+}
+}
+
+function openStory(id){
+hideAll();
+document.getElementById("storyPage").style.display="block";
+const t = document.getElementById("storyTitle");
+const p = document.getElementById("storyText");
+
+if(id==="alina"){
+t.innerText="История Алины";
+p.innerText="Алина прошла симуляцию Frontend и получила оффер.";
+}
+if(id==="danil"){
+t.innerText="История Даниила";
+p.innerText="Даниил прошёл маркетинговую симуляцию и стажировку.";
+}
+if(id==="aijan"){
+t.innerText="История Айжан";
+p.innerText="Айжан получила первый финтех-опыт.";
+}
+}
+
+function openLearning(type){
+hideAll();
+document.getElementById("learning-page").style.display="block";
+const v = document.getElementById("learningVideo");
+const t = document.getElementById("learningTitle");
+
+if(type==="cv"){
+t.innerText="Как составить CV";
+v.src="https://www.youtube.com/embed/6kZcJzqY9GU";
+}
+if(type==="cover"){
+t.innerText="Cover Letter";
+v.src="https://www.youtube.com/embed/Ux8pFqJdJ4A";
+}
+if(type==="interview"){
+t.innerText="Интервью";
+v.src="https://www.youtube.com/embed/7yY2B5R9YyM";
+}
+}
+
+function hideAll(){
+document.querySelectorAll("header, section, footer").forEach(el=>el.style.display="none");
+}
+
+function goBack(){
+document.querySelectorAll("header, section, footer").forEach(el=>el.style.display="");
+document.querySelectorAll(".hidden").forEach(el=>el.style.display="none");
+}
+</script>
+
+</body>
+</html>

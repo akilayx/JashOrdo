@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
@@ -10,7 +10,6 @@
   <link rel="preconnect" href="[fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
   <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Inter:wght@400;500;600&display=swap)" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
 </head>
 
 <body>
@@ -33,71 +32,123 @@
         <li><a href="#contact">Контакты</a></li>
       </ul>
     </nav>
-
-    <!-- ========== HERO ========== -->
-    <section class="hero" id="home" aria-labelledby="hero-heading">
-      <div class="hero__ornament hero__ornament--top"></div>
-      <div class="hero__content">
-        <span class="hero__tag">Платформа для молодёжи Кыргызстана</span>
-        <h1 id="hero-heading">Твой первый<br>карьерный шаг</h1>
-        <p>Пройди симуляцию стажировки → получи реальный опыт → получи оффер.<br>
-           Как Forage — но для нашего рынка.</p>
-        <div class="hero__actions">
-          <a href="#internships" class="btn btn--primary">Найти стажировку</a>
-          <a href="#how-it-works" class="btn btn--outline">Как это работает</a>
-        </div>
-      </div>
-      <div class="hero__ornament hero__ornament--bottom"></div>
-    </section>
   </header>
 
   <main id="main-content">
 
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <div class="hero__bg">
+        <img src="images/Технологии-photo.jpg" alt="" role="presentation" class="hero__bg-img">
+        <div class="hero__bg-overlay"></div>
+        <div class="hero__bg-pattern"></div>
+      </div>
+
+      <div class="hero__content">
+        <span class="hero__tag animate-pop">Платформа для молодёжи Кыргызстана</span>
+        <h1 id="hero-heading" class="animate-up">
+          Твой первый<br>карьерный шаг
+        </h1>
+        <p class="animate-up animate-delay-1">
+          Пройди симуляцию стажировки → получи реальный опыт → получи оффер.<br>
+          Как Forage — но для нашего рынка.
+        </p>
+
+        <!-- Счётчики -->
+        <div class="hero__stats animate-up animate-delay-2">
+          <div class="hero__stat">
+            <span class="hero__stat-num" data-count="500">0</span><span>+</span>
+            <span class="hero__stat-label">участников</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <span class="hero__stat-num" data-count="20">0</span><span>+</span>
+            <span class="hero__stat-label">стажировок</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <span class="hero__stat-num" data-count="15">0</span><span>+</span>
+            <span class="hero__stat-label">компаний</span>
+          </div>
+        </div>
+
+        <div class="hero__actions animate-up animate-delay-3">
+          <button type="button" class="btn btn--primary btn--large" data-action="open-internships">
+            Найти стажировку
+          </button>
+          <a href="#how-it-works" class="btn btn--outline btn--large">
+            Как это работает
+          </a>
+        </div>
+      </div>
+
+      <!-- Скролл-индикатор -->
+      <a href="#how-it-works" class="hero__scroll" aria-label="Прокрутить вниз">
+        <span></span>
+      </a>
+    </section>
+
     <!-- ========== КАК ЭТО РАБОТАЕТ ========== -->
     <section id="how-it-works" class="section section--alt" aria-labelledby="how-heading">
       <div class="container">
-        <span class="section__tag">Модель платформы</span>
-        <h2 id="how-heading">Как работает Jash Ordo</h2>
-        <p class="section__sub">Вдохновлено моделью <strong>Forage</strong> — адаптировано для Кыргызстана</p>
+        <div class="section__head">
+          <span class="section__tag">Модель платформы</span>
+          <h2 id="how-heading">Как работает Jash Ordo</h2>
+          <p class="section__sub">Вдохновлено моделью <strong>Forage</strong> — адаптировано для Кыргызстана</p>
+        </div>
 
-        <ol class="steps" role="list">
-          <li class="step">
-            <div class="step__num">01</div>
-            <div class="step__body">
-              <h3>Выбери направление</h3>
-              <p>Frontend, маркетинг, финтех, дизайн — более 20 треков и программ для школьников.</p>
+        <div class="how-grid">
+          <!-- Картинка -->
+          <div class="how-grid__img">
+            <img src="images/career-path.jpg" alt="Карьерный путь" loading="lazy">
+            <div class="how-grid__img-badge">
+              <span>🚀</span>
+              <span>Старт карьеры</span>
             </div>
-          </li>
-          <li class="step">
-            <div class="step__num">02</div>
-            <div class="step__body">
-              <h3>Пройди симуляцию</h3>
-              <p>Реальные задачи от компаний-партнёров: MBank, IT Agency и других. Без опыта — можно.</p>
-            </div>
-          </li>
-          <li class="step">
-            <div class="step__num">03</div>
-            <div class="step__body">
-              <h3>Получи сертификат</h3>
-              <p>После завершения симуляции — сертификат и рекомендация в профиль.</p>
-            </div>
-          </li>
-          <li class="step">
-            <div class="step__num">04</div>
-            <div class="step__body">
-              <h3>Получи оффер</h3>
-              <p>Компании-партнёры видят твой результат и приглашают на реальную стажировку.</p>
-            </div>
-          </li>
-        </ol>
+          </div>
+
+          <!-- Шаги -->
+          <ol class="steps" role="list">
+            <li class="step" data-step="1">
+              <div class="step__num">01</div>
+              <div class="step__body">
+                <h3>Выбери направление</h3>
+                <p>Frontend, маркетинг, финтех, дизайн — более 20 треков и программ для школьников.</p>
+              </div>
+            </li>
+            <li class="step" data-step="2">
+              <div class="step__num">02</div>
+              <div class="step__body">
+                <h3>Пройди симуляцию</h3>
+                <p>Реальные задачи от компаний-партнёров: MBank, IT Agency и других. Без опыта — можно.</p>
+              </div>
+            </li>
+            <li class="step" data-step="3">
+              <div class="step__num">03</div>
+              <div class="step__body">
+                <h3>Получи сертификат</h3>
+                <p>После завершения симуляции — сертификат и рекомендация в профиль.</p>
+              </div>
+            </li>
+            <li class="step" data-step="4">
+              <div class="step__num">04</div>
+              <div class="step__body">
+                <h3>Получи оффер</h3>
+                <p>Компании-партнёры видят твой результат и приглашают на реальную стажировку.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
       </div>
     </section>
 
-    <!-- ========== ПОПУЛЯРНЫЕ НАПРАВЛЕНИЯ (превью) ========== -->
+    <!-- ========== ПОПУЛЯРНЫЕ НАПРАВЛЕНИЯ ========== -->
     <section id="internships" class="section" aria-labelledby="internships-heading">
       <div class="container">
-        <span class="section__tag">Стажировки</span>
-        <h2 id="internships-heading">Популярные направления</h2>
+        <div class="section__head">
+          <span class="section__tag">Стажировки</span>
+          <h2 id="internships-heading">Популярные направления</h2>
+        </div>
 
         <div class="search-box" role="search">
           <label for="searchInput" class="sr-only">Поиск профессии</label>
@@ -113,7 +164,7 @@
         </div>
 
         <ul class="cards" role="list">
-          <li class="card">
+          <li class="card card--hover">
             <div class="card__icon">💻</div>
             <h3>Frontend Developer</h3>
             <p>HTML / CSS / JavaScript</p>
@@ -121,7 +172,7 @@
               Смотреть
             </button>
           </li>
-          <li class="card">
+          <li class="card card--hover">
             <div class="card__icon">📣</div>
             <h3>Маркетолог</h3>
             <p>SMM / аналитика</p>
@@ -129,7 +180,7 @@
               Смотреть
             </button>
           </li>
-          <li class="card">
+          <li class="card card--hover">
             <div class="card__icon">📊</div>
             <h3>Data Analyst</h3>
             <p>Excel / SQL / Python</p>
@@ -147,7 +198,7 @@
       </div>
     </section>
 
-    <!-- ========== ВСЕ СТАЖИРОВКИ (отдельная страница) ========== -->
+    <!-- ========== ВСЕ СТАЖИРОВКИ ========== -->
     <section
       id="internships-page"
       class="section page-view hidden"
@@ -155,8 +206,10 @@
       aria-hidden="true"
     >
       <div class="container">
-        <span class="section__tag">Все возможности</span>
-        <h2 id="all-heading">20+ стажировок и программ</h2>
+        <div class="section__head">
+          <span class="section__tag">Все возможности</span>
+          <h2 id="all-heading">20+ стажировок и программ</h2>
+        </div>
 
         <div class="filter-bar" role="group" aria-label="Фильтр по категориям">
           <button type="button" class="filter-btn active" data-filter="all">Все</button>
@@ -176,11 +229,10 @@
           >
         </div>
 
-        <!-- Карточки стажировок -->
         <ul class="cards cards--wide" id="allInternships" role="list">
 
           <!-- IT -->
-          <li class="card" data-category="it">
+          <li class="card card--hover" data-category="it">
             <div class="card__header">
               <span class="card__company">MBank</span>
               <span class="card__badge card__badge--sim">Симуляция</span>
@@ -193,7 +245,7 @@
             </button>
           </li>
 
-          <li class="card" data-category="it">
+          <li class="card card--hover" data-category="it">
             <div class="card__header">
               <span class="card__company">IT Agency</span>
               <span class="card__badge card__badge--cv">CV + контакты</span>
@@ -206,7 +258,7 @@
             </button>
           </li>
 
-          <li class="card" data-category="it">
+          <li class="card card--hover" data-category="it">
             <div class="card__header">
               <span class="card__company">MBank</span>
               <span class="card__badge card__badge--sim">Симуляция</span>
@@ -219,7 +271,7 @@
             </button>
           </li>
 
-          <li class="card" data-category="it">
+          <li class="card card--hover" data-category="it">
             <div class="card__header">
               <span class="card__company">Салым Финанс</span>
               <span class="card__badge card__badge--sim">Симуляция</span>
@@ -232,7 +284,7 @@
             </button>
           </li>
 
-          <li class="card" data-category="it">
+          <li class="card card--hover" data-category="it">
             <div class="card__header">
               <span class="card__company">Megaline</span>
               <span class="card__badge card__badge--cv">CV + контакты</span>
@@ -245,7 +297,7 @@
             </button>
           </li>
 
-          <li class="card" data-category="it">
+          <li class="card card--hover" data-category="it">
             <div class="card__header">
               <span class="card__company">Jash Ordo Lab</span>
               <span class="card__badge card__badge--sim">Симуляция</span>
@@ -259,7 +311,7 @@
           </li>
 
           <!-- Business -->
-          <li class="card" data-category="business">
+          <li class="card card--hover" data-category="business">
             <div class="card__header">
               <span class="card__company">IT Agency</span>
               <span class="card__badge card__badge--sim">Симуляция</span>
@@ -272,7 +324,7 @@
             </button>
           </li>
 
-          <li class="card" data-category="business">
+          <li class="card card--hover" data-category="business">
             <div class="card__header">
               <span class="card__company">Kumtor Gold</span>
               <span class="card__badge card__badge--cv">CV + контакты</span>
@@ -285,7 +337,7 @@
             </button>
           </li>
 
-          <li class="card" data-category="business">
+          <li class="card card--hover" data-category="business">
             <div class="card__header">
               <span class="card__company">Optima Bank</span>
               <span class="card__badge card__badge--sim">Симуляция</span>
@@ -298,7 +350,7 @@
             </button>
           </li>
 
-          <li class="card" data-category="business">
+          <li class="card card--hover" data-category="business">
             <div class="card__header">
               <span class="card__company">Beeline KG</span>
               <span class="card__badge card__badge--cv">CV + контакты</span>
@@ -311,7 +363,7 @@
             </button>
           </li>
 
-          <li class="card" data-category="business">
+          <li class="card card--hover" data-category="business">
             <div class="card__header">
               <span class="card__company">Jash Ordo Lab</span>
               <span class="card__badge card__badge--sim">Симуляция</span>
@@ -324,8 +376,8 @@
             </button>
           </li>
 
-          <!-- Creative / Design -->
-          <li class="card" data-category="creative">
+          <!-- Creative -->
+          <li class="card card--hover" data-category="creative">
             <div class="card__header">
               <span class="card__company">IT Agency</span>
               <span class="card__badge card__badge--sim">Симуляция</span>
@@ -338,7 +390,7 @@
             </button>
           </li>
 
-          <li class="card" data-category="creative">
+          <li class="card card--hover" data-category="creative">
             <div class="card__header">
               <span class="card__company">Creative Bureau KG</span>
               <span class="card__badge card__badge--cv">CV + контакты</span>
@@ -351,7 +403,7 @@
             </button>
           </li>
 
-          <li class="card" data-category="creative">
+          <li class="card card--hover" data-category="creative">
             <div class="card__header">
               <span class="card__company">Jash Ordo Lab</span>
               <span class="card__badge card__badge--sim">Симуляция</span>
@@ -364,7 +416,7 @@
             </button>
           </li>
 
-          <li class="card" data-category="creative">
+          <li class="card card--hover" data-category="creative">
             <div class="card__header">
               <span class="card__company">Media House KG</span>
               <span class="card__badge card__badge--cv">CV + контакты</span>
@@ -377,8 +429,8 @@
             </button>
           </li>
 
-          <!-- School programs -->
-          <li class="card" data-category="school">
+          <!-- School -->
+          <li class="card card--hover" data-category="school">
             <div class="card__header">
               <span class="card__company">Jash Ordo</span>
               <span class="card__badge card__badge--school">14–17 лет</span>
@@ -391,7 +443,7 @@
             </button>
           </li>
 
-          <li class="card" data-category="school">
+          <li class="card card--hover" data-category="school">
             <div class="card__header">
               <span class="card__company">Jash Ordo</span>
               <span class="card__badge card__badge--school">14–17 лет</span>
@@ -404,7 +456,7 @@
             </button>
           </li>
 
-          <li class="card" data-category="school">
+          <li class="card card--hover" data-category="school">
             <div class="card__header">
               <span class="card__company">Jash Ordo</span>
               <span class="card__badge card__badge--school">14–17 лет</span>
@@ -417,7 +469,7 @@
             </button>
           </li>
 
-          <li class="card" data-category="school">
+          <li class="card card--hover" data-category="school">
             <div class="card__header">
               <span class="card__company">MBank Junior</span>
               <span class="card__badge card__badge--school">16–18 лет</span>
@@ -430,7 +482,7 @@
             </button>
           </li>
 
-          <li class="card" data-category="school">
+          <li class="card card--hover" data-category="school">
             <div class="card__header">
               <span class="card__company">Jash Ordo</span>
               <span class="card__badge card__badge--school">14–17 лет</span>
@@ -445,11 +497,13 @@
 
         </ul>
 
-        <button type="button" class="btn btn--back" data-action="go-back">← Назад</button>
+        <div class="page-actions">
+          <button type="button" class="btn btn--back" data-action="go-back">← Назад</button>
+        </div>
       </div>
     </section>
 
-    <!-- ========== СИМУЛЯЦИЯ (Forage-стиль) ========== -->
+    <!-- ========== СИМУЛЯЦИЯ ========== -->
     <section
       id="simulation"
       class="section page-view hidden"
@@ -464,7 +518,6 @@
           <p id="simDesc" class="sim-desc"></p>
         </div>
 
-        <!-- Прогресс -->
         <div class="sim-progress-wrap">
           <span class="sim-step-label" id="simStepLabel">Шаг 1 из 3</span>
           <div
@@ -479,14 +532,12 @@
           </div>
         </div>
 
-        <!-- Задание -->
         <div class="sim-task-card" id="simTaskCard">
           <h3 id="simTaskTitle"></h3>
           <p id="simTaskText"></p>
           <div id="simTaskInput" class="sim-task-input"></div>
         </div>
 
-        <!-- Финальный экран -->
         <div class="sim-complete hidden" id="simComplete">
           <div class="sim-complete__icon">🎉</div>
           <h3>Симуляция завершена!</h3>
@@ -511,7 +562,7 @@
       </div>
     </section>
 
-    <!-- ========== ФОРМА ЗАЯВКИ (CV + контакты) ========== -->
+    <!-- ========== ФОРМА ЗАЯВКИ ========== -->
     <section
       id="apply-page"
       class="section page-view hidden"
@@ -519,11 +570,13 @@
       aria-hidden="true"
     >
       <div class="container container--narrow">
-        <span class="section__tag">Подача заявки</span>
-        <h2 id="apply-heading">Оставь заявку</h2>
-        <p id="applyCompanyName" class="section__sub"></p>
+        <div class="section__head">
+          <span class="section__tag">Подача заявки</span>
+          <h2 id="apply-heading">Оставь заявку</h2>
+          <p id="applyCompanyName" class="section__sub"></p>
+        </div>
 
-        <form id="applyForm" novalidate>
+        <form id="applyForm" novalidate class="form-card">
           <div class="form-group">
             <label for="applyName">Имя и фамилия</label>
             <input id="applyName" name="name" type="text" placeholder="Айдай Бекова" required autocomplete="name">
@@ -548,65 +601,100 @@
             <label for="applyCV">Прикрепить CV (PDF, DOC)</label>
             <input id="applyCV" name="cv" type="file" accept=".pdf,.doc,.docx">
           </div>
-
           <button type="submit" class="btn btn--primary btn--large">Отправить заявку</button>
           <p id="applyStatus" role="status" aria-live="polite" class="form-status"></p>
         </form>
 
-        <button type="button" class="btn btn--back" data-action="go-back">← Назад</button>
+        <div class="page-actions">
+          <button type="button" class="btn btn--back" data-action="go-back">← Назад</button>
+        </div>
       </div>
     </section>
 
     <!-- ========== ИСТОРИИ ========== -->
-    <section id="stories" class="section section--alt" aria-labelledby="stories-heading">
+    <section id="stories" class="section" aria-labelledby="stories-heading">
       <div class="container">
-        <span class="section__tag">Участники</span>
-        <h2 id="stories-heading">Истории участников</h2>
+        <div class="section__head">
+          <span class="section__tag">Участники</span>
+          <h2 id="stories-heading">Истории участников</h2>
+          <p class="section__sub">Реальные люди, реальные результаты</p>
+        </div>
+
+        <!-- Баннер офис -->
+        <div class="stories-banner">
+          <img src="images/Офис-photo.jpg" alt="Команда Jash Ordo" loading="lazy">
+          <div class="stories-banner__text">
+            <span>Уже более</span>
+            <strong>500+ участников</strong>
+            <span>прошли стажировки через платформу</span>
+          </div>
+        </div>
 
         <ul class="stories-list" role="list">
 
           <li class="story">
-            <img
-              src="images/Алина-photo.jpg"
-              alt="Алина — участница IT-стажировки"
-              width="120" height="120"
-              loading="lazy"
-            >
+            <div class="story__photo-wrap">
+              <img
+                src="images/Алина-photo.jpg"
+                alt="Алина — участница IT-стажировки"
+                width="120" height="120"
+                loading="lazy"
+              >
+              <span class="story__role-badge">Web / IT</span>
+            </div>
             <div class="story__body">
-              <span class="card__badge card__badge--sim">Web / IT</span>
               <h3>Алина, 11 класс · Бишкек</h3>
-              <p>Начала с виртуальной симуляции: верстала страницы, работала с базовой логикой JavaScript.</p>
+              <div class="story__quote">"Симуляция дала мне реальные задачи — я верстала страницы как настоящий разработчик"</div>
+              <p>Начала с виртуальной симуляции: верстала страницы, работала с базовой логикой JavaScript, читала технические задания.</p>
               <p><em>После симуляции получила приглашение на онлайн-стажировку в IT-команду.</em></p>
+              <div class="story__result">
+                <span class="story__result-icon">✅</span>
+                <span>Получила оффер на стажировку</span>
+              </div>
             </div>
           </li>
 
           <li class="story">
-            <img
-              src="images/Даниил-photo.jpg"
-              alt="Даниил — участник маркетинговой стажировки"
-              width="120" height="120"
-              loading="lazy"
-            >
+            <div class="story__photo-wrap">
+              <img
+                src="images/Даниил-photo.jpg"
+                alt="Даниил — участник маркетинговой стажировки"
+                width="120" height="120"
+                loading="lazy"
+              >
+              <span class="story__role-badge story__role-badge--marketing">Маркетинг</span>
+            </div>
             <div class="story__body">
-              <span class="card__badge card__badge--sim">Маркетинг</span>
               <h3>Даниил, 10 класс</h3>
-              <p>Прошёл маркетинговую симуляцию: анализировал аудиторию, разрабатывал рекламные идеи.</p>
+              <div class="story__quote">"Я не знал кем хочу стать — теперь точно знаю: маркетолог"</div>
+              <p>Прошёл маркетинговую симуляцию: анализировал аудиторию, разрабатывал рекламные идеи, изучал digital-маркетинг.</p>
               <p><em>Попал на месячную стажировку в маркетинговый отдел и поработал с реальными кейсами.</em></p>
+              <div class="story__result">
+                <span class="story__result-icon">✅</span>
+                <span>Месяц реальной стажировки</span>
+              </div>
             </div>
           </li>
 
           <li class="story">
-            <img
-              src="images/Айжан-photo.jpg"
-              alt="Айжан — участница финтех-стажировки"
-              width="120" height="120"
-              loading="lazy"
-            >
+            <div class="story__photo-wrap">
+              <img
+                src="images/Айжан-photo.jpg"
+                alt="Айжан — участница финтех-стажировки"
+                width="120" height="120"
+                loading="lazy"
+              >
+              <span class="story__role-badge story__role-badge--fintech">Финтех</span>
+            </div>
             <div class="story__body">
-              <span class="card__badge card__badge--sim">Финтех</span>
               <h3>Айжан, 3 курс</h3>
-              <p>Прошла финансово-аналитическую симуляцию: изучала основы финтеха и работу с данными.</p>
-              <p><em>Получила стажировку в финансовой компании и работает с реальными задачами.</em></p>
+              <div class="story__quote">"Симуляция заменила мне год теории — я сразу работала с реальными данными"</div>
+              <p>Прошла финансово-аналитическую симуляцию: изучала основы финтеха, работу с данными и финансовыми продуктами.</p>
+              <p><em>Получила стажировку в финансовой компании и работает с реальными бизнес-задачами.</em></p>
+              <div class="story__result">
+                <span class="story__result-icon">✅</span>
+                <span>Стажировка в финтех-компании</span>
+              </div>
             </div>
           </li>
 
@@ -615,14 +703,25 @@
     </section>
 
     <!-- ========== ОБУЧЕНИЕ ========== -->
-    <section id="learning" class="section" aria-labelledby="learning-heading">
+    <section id="learning" class="section section--alt" aria-labelledby="learning-heading">
       <div class="container">
-        <span class="section__tag">Карьерные ресурсы</span>
-        <h2 id="learning-heading">Подготовься к стажировке</h2>
-        <p class="section__sub">Нажми на карточку — откроется страница с видео и материалами</p>
+        <div class="section__head">
+          <span class="section__tag">Карьерные ресурсы</span>
+          <h2 id="learning-heading">Подготовься к стажировке</h2>
+          <p class="section__sub">Нажми на карточку — откроется страница с видео и советами</p>
+        </div>
 
-        <ul class="cards" role="list">
-          <li class="card card--learning">
+        <!-- Баннер обучения -->
+        <div class="learning-banner">
+          <img src="images/Обучение-photo.jpg" alt="Обучение и развитие" loading="lazy">
+          <div class="learning-banner__overlay">
+            <h3>Бесплатные материалы для старта</h3>
+            <p>CV, Cover Letter, подготовка к интервью и LinkedIn</p>
+          </div>
+        </div>
+
+        <ul class="cards cards--learning" role="list">
+          <li class="card card--learning card--hover">
             <div class="card__icon">📄</div>
             <h3>Как составить CV</h3>
             <p>Структура резюме, частые ошибки, примеры для студентов</p>
@@ -630,7 +729,7 @@
               Открыть →
             </button>
           </li>
-          <li class="card card--learning">
+          <li class="card card--learning card--hover">
             <div class="card__icon">✉️</div>
             <h3>Cover Letter</h3>
             <p>Как написать сопроводительное письмо, которое читают</p>
@@ -638,15 +737,15 @@
               Открыть →
             </button>
           </li>
-          <li class="card card--learning">
+          <li class="card card--learning card--hover">
             <div class="card__icon">🎤</div>
             <h3>Собеседование</h3>
-            <p>Типичные вопросы, как рассказать о себе, что спросить у работодателя</p>
+            <p>Типичные вопросы, как рассказать о себе, что спросить</p>
             <button type="button" class="btn btn--primary" data-action="open-learning" data-topic="interview">
               Открыть →
             </button>
           </li>
-          <li class="card card--learning">
+          <li class="card card--learning card--hover">
             <div class="card__icon">🔗</div>
             <h3>LinkedIn профиль</h3>
             <p>Как оформить профиль, чтобы тебя нашли рекрутеры</p>
@@ -666,9 +765,11 @@
       aria-hidden="true"
     >
       <div class="container container--narrow">
-        <span class="section__tag" id="learningTag"></span>
-        <h2 id="learning-page-heading"></h2>
-        <p id="learningDesc" class="section__sub"></p>
+        <div class="section__head">
+          <span class="section__tag" id="learningTag"></span>
+          <h2 id="learning-page-heading"></h2>
+          <p id="learningDesc" class="section__sub"></p>
+        </div>
 
         <div class="video-wrapper">
           <iframe
@@ -681,13 +782,18 @@
           ></iframe>
         </div>
 
-        <!-- Дополнительные материалы -->
         <div class="learning-tips" id="learningTips"></div>
 
-        <!-- Контакты для обучения -->
+        <!-- Баннер волна -->
+        <div class="learning-wave-banner">
+          <img src="images/learning-wave.jpg" alt="" role="presentation" loading="lazy">
+          <div class="learning-wave-banner__content">
+            <h3>Нужна помощь с подготовкой?</h3>
+            <p>Наши менторы помогут доработать CV, подготовиться к интервью или выбрать направление.</p>
+          </div>
+        </div>
+
         <div class="learning-contact">
-          <h3>Нужна помощь с подготовкой?</h3>
-          <p>Наши менторы помогут доработать CV, подготовиться к интервью или выбрать направление.</p>
           <div class="learning-contact__links">
             <a href="[t.me](https://t.me/jashordo)" target="_blank" rel="noopener noreferrer" class="contact-link contact-link--tg">
               <span>📨</span> Telegram-чат
@@ -701,52 +807,92 @@
           </div>
         </div>
 
-        <button type="button" class="btn btn--back" data-action="go-back">← Назад</button>
+        <div class="page-actions">
+          <button type="button" class="btn btn--back" data-action="go-back">← Назад</button>
+        </div>
       </div>
     </section>
 
     <!-- ========== КОНТАКТЫ ========== -->
-    <section id="contact" class="section section--alt" aria-labelledby="contact-heading">
-      <div class="container container--narrow">
-        <span class="section__tag">Связь</span>
-        <h2 id="contact-heading">Связаться с нами</h2>
+    <section id="contact" class="section" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-grid">
 
-        <form id="contactForm" novalidate>
-          <div class="form-group">
-            <label for="contactName">Имя</label>
-            <input
-              id="contactName"
-              name="name"
-              type="text"
-              placeholder="Ваше имя"
-              required
-              autocomplete="name"
-            >
-          </div>
-          <div class="form-group">
-            <label for="contactEmail">Email</label>
-            <input
-              id="contactEmail"
-              name="email"
-              type="email"
-              placeholder="example@mail.com"
-              required
-              autocomplete="email"
-            >
-          </div>
-          <div class="form-group">
-            <label for="contactResume">CV / Резюме (необязательно)</label>
-            <input
-              id="contactResume"
-              name="resume"
-              type="file"
-              accept=".pdf,.doc,.docx"
-            >
+          <!-- Левая часть — фото + текст -->
+          <div class="contact-info">
+            <span class="section__tag">Связь</span>
+            <h2 id="contact-heading">Связаться с нами</h2>
+            <p>Есть вопросы о стажировках, симуляциях или партнёрстве? Напиши нам — ответим быстро.</p>
+
+            <div class="contact-info__img-wrap">
+              <img src="images/ethno-pattern.jpg" alt="Jash Ordo офис" loading="lazy">
+            </div>
+
+            <ul class="contact-info__list">
+              <li>
+                <span class="contact-info__icon">📍</span>
+                <span>Бишкек, Кыргызстан</span>
+              </li>
+              <li>
+                <span class="contact-info__icon">✉️</span>
+                <a href="mailto:info@jashordo.kg">info@jashordo.kg</a>
+              </li>
+              <li>
+                <span class="contact-info__icon">💬</span>
+                <a href="[t.me](https://t.me/jashordo)" target="_blank" rel="noopener noreferrer">@jashordo</a>
+              </li>
+            </ul>
           </div>
 
-          <button type="submit" class="btn btn--primary">Отправить</button>
-          <p id="formStatus" role="status" aria-live="polite" class="form-status sr-only"></p>
-        </form>
+          <!-- Правая часть — форма -->
+          <div class="contact-form-wrap">
+            <form id="contactForm" novalidate class="form-card">
+              <div class="form-group">
+                <label for="contactName">Имя</label>
+                <input
+                  id="contactName"
+                  name="name"
+                  type="text"
+                  placeholder="Ваше имя"
+                  required
+                  autocomplete="name"
+                >
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Email</label>
+                <input
+                  id="contactEmail"
+                  name="email"
+                  type="email"
+                  placeholder="example@mail.com"
+                  required
+                  autocomplete="email"
+                >
+              </div>
+              <div class="form-group">
+                <label for="contactMessage">Сообщение</label>
+                <textarea
+                  id="contactMessage"
+                  name="message"
+                  rows="4"
+                  placeholder="Ваш вопрос или предложение..."
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="contactResume">CV / Резюме (необязательно)</label>
+                <input
+                  id="contactResume"
+                  name="resume"
+                  type="file"
+                  accept=".pdf,.doc,.docx"
+                >
+              </div>
+              <button type="submit" class="btn btn--primary btn--large">Отправить</button>
+              <p id="formStatus" role="status" aria-live="polite" class="form-status"></p>
+            </form>
+          </div>
+
+        </div>
       </div>
     </section>
 
@@ -759,17 +905,36 @@
         <span class="logo__ornament">❧</span>
         <strong>Jash Ordo</strong>
         <p>Карьерный старт для молодёжи Кыргызстана</p>
+        <div class="footer__social">
+          <a href="[t.me](https://t.me/jashordo)" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.932z"/></svg>
+          </a>
+          <a href="[github.com](https://github.com/akilayx/JashOrdo)" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+        </div>
       </div>
+
       <nav class="footer__nav" aria-label="Ссылки в футере">
+        <strong>Платформа</strong>
         <a href="#home">Главная</a>
+        <a href="#how-it-works">Как работает</a>
         <a href="#internships">Стажировки</a>
+        <a href="#stories">Истории</a>
+      </nav>
+
+      <nav class="footer__nav" aria-label="Ресурсы">
+        <strong>Ресурсы</strong>
         <a href="#learning">Обучение</a>
         <a href="#contact">Контакты</a>
         <a href="[github.com](https://github.com/akilayx/JashOrdo)" target="_blank" rel="noopener noreferrer">GitHub</a>
       </nav>
+
       <p class="footer__copy">© 2026 Jash Ordo. Все права защищены.</p>
     </div>
   </footer>
+
+  <script src="script.js"></script>
 
 </body>
 </html>

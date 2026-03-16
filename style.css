@@ -1574,3 +1574,178 @@ select {
     background: var(--cream-2);
   }
 }
+/* =========================================================
+   ETHNO DECOR EXTENSIONS — Kyrgyz Identity
+   ========================================================= */
+
+/* Золотой градиент как металл */
+.gold-gradient {
+  background: linear-gradient(
+    120deg,
+    #f5d48a 0%,
+    #c9a24d 40%,
+    #a07830 60%,
+    #e8c97a 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* декоративная линия между секциями */
+
+.ethno-divider{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  margin:80px auto;
+  max-width:500px;
+}
+
+.ethno-divider::before,
+.ethno-divider::after{
+  content:'';
+  flex:1;
+  height:2px;
+
+  background:
+  repeating-linear-gradient(
+  90deg,
+  var(--gold),
+  var(--gold) 10px,
+  transparent 10px,
+  transparent 18px
+  );
+}
+
+.ethno-divider span{
+  color:var(--gold);
+  font-size:20px;
+}
+
+/* кыргызский орнамент фон */
+
+.ethno-pattern{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:0.08;
+
+  background:
+  radial-gradient(circle at 20% 30%, var(--gold) 2px, transparent 2px),
+  radial-gradient(circle at 80% 60%, var(--gold) 2px, transparent 2px),
+  radial-gradient(circle at 40% 80%, var(--gold) 2px, transparent 2px);
+
+  background-size:120px 120px;
+}
+
+/* премиум hover карточек */
+
+.card:hover{
+
+  transform:translateY(-8px) scale(1.01);
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,0.15),
+  0 0 0 1px rgba(201,162,77,0.15);
+
+}
+
+/* золотое свечение */
+
+.gold-glow{
+
+  box-shadow:
+  0 0 12px rgba(201,162,77,0.4),
+  0 0 30px rgba(201,162,77,0.25);
+
+}
+
+/* этно кнопка */
+
+.btn--ethno{
+
+background:linear-gradient(
+120deg,
+#c9a24d,
+#e8c97a
+);
+
+color:#1a1208;
+
+border:none;
+
+}
+
+.btn--ethno:hover{
+
+transform:translateY(-2px);
+
+box-shadow:
+0 8px 25px rgba(201,162,77,0.4);
+
+}
+
+/* декоративные углы карточек */
+
+.card::before{
+
+content:'';
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:30px;
+height:30px;
+
+border-top:3px solid var(--gold);
+border-left:3px solid var(--gold);
+
+opacity:0.4;
+
+}
+
+/* этно рамка секций */
+
+.ethno-frame{
+
+position:relative;
+
+}
+
+.ethno-frame::after{
+
+content:'';
+
+position:absolute;
+
+inset:0;
+
+border:1px solid rgba(201,162,77,0.25);
+
+border-radius:var(--radius-md);
+
+pointer-events:none;
+
+}
+
+/* плавное появление */
+
+.reveal{
+
+opacity:0;
+transform:translateY(30px);
+
+}
+
+.reveal.active{
+
+opacity:1;
+transform:translateY(0);
+
+transition:all .6s ease;
+
+}

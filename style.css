@@ -1231,7 +1231,7 @@ select {
   margin-top: 20px;
 }
 
-.learning-nav__btn {
+.learning-nav__link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -1242,12 +1242,12 @@ select {
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--deep);
-  cursor: pointer;
+  text-decoration: none;
   transition: all var(--transition);
   box-shadow: var(--shadow-sm);
 }
 
-.learning-nav__btn:hover {
+.learning-nav__link:hover {
   border-color: var(--gold);
   background: var(--gold-light);
   color: var(--deep);

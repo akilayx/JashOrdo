@@ -296,59 +296,23 @@ const SIMULATIONS = {
 const LEARNING_DATA = {
   cv: {
     tag: 'Карьерные ресурсы',
-    title: 'Как составить CV',
-    desc: 'Резюме — это твой первый шанс произвести впечатление. Посмотри видео и изучи советы ниже.',
-    videoId: 'BUEkYVGz8B0',
-    tips: [
-      { icon: '✅', text: 'Начни с контактных данных: имя, email, телефон, LinkedIn или GitHub.' },
-      { icon: '✅', text: 'Добавь краткое "О себе" — 2–3 предложения о твоих навыках и цели.' },
-      { icon: '✅', text: 'Раздел "Опыт": даже волонтёрство, учебные проекты, фриланс считаются.' },
-      { icon: '✅', text: 'Навыки: раздели на хард-скиллы (Excel, Figma) и софт-скиллы (коммуникация).' },
-      { icon: '❌', text: 'Не добавляй фото, если это не требует компания.' },
-      { icon: '❌', text: 'Не пиши "хочу развиваться" — пиши конкретно, чего хочешь достичь.' },
-    ],
+    title: '📄 CV / Resume',
+    desc: 'Что это: Резюме — это документ, в котором ты показываешь свои навыки, образование и опыт.<br>Зачем: Работодатели и компании смотрят CV, чтобы понять, кто ты и подходишь ли на стажировку или работу.<br>Для чего: Чтобы начать карьеру, нужно иметь аккуратное и структурированное CV — это твой первый «профессиональный паспорт».',
   },
   cover: {
     tag: 'Карьерные ресурсы',
-    title: 'Cover Letter',
-    desc: 'Сопроводительное письмо — шанс рассказать то, что не влезает в CV.',
-    videoId: 'JiBz4ye5f1M',
-    tips: [
-      { icon: '✅', text: 'Первый абзац: кто ты и на какую позицию претендуешь.' },
-      { icon: '✅', text: 'Второй абзац: почему именно эта компания? Покажи, что ты изучил её.' },
-      { icon: '✅', text: 'Третий абзац: какой конкретный опыт или навык поможет тебе справиться.' },
-      { icon: '✅', text: 'Финал: призыв к действию — "Буду рад пообщаться на интервью".' },
-      { icon: '❌', text: 'Не копируй шаблонные фразы вроде "ответственный, коммуникабельный".' },
-      { icon: '❌', text: 'Не делай письмо длиннее одной страницы A4.' },
-    ],
+    title: '✉️ Cover Letter (Сопроводительное письмо)',
+    desc: 'Что это: Письмо, которое сопровождает твое резюме и рассказывает, почему именно ты подходишь для стажировки или работы.<br>Зачем: Оно помогает выделиться среди других кандидатов, показать мотивацию и личные качества.<br>Для чего: Даже если у тебя хорошее резюме, без cover letter работодатели могут не понять, почему ты именно тот, кого они ищут.',
   },
   interview: {
     tag: 'Карьерные ресурсы',
-    title: 'Собеседование',
-    desc: 'Интервью — это разговор двух людей, а не экзамен. Готовься и будь собой.',
-    videoId: 'q-AmQYHyCiY',
-    tips: [
-      { icon: '✅', text: '"Расскажите о себе" — это не пересказ CV. Кратко: кто, что умеешь, почему здесь.' },
-      { icon: '✅', text: 'Используй метод STAR: Ситуация → Задача → Действие → Результат.' },
-      { icon: '✅', text: 'Изучи компанию заранее: продукты, последние новости, ценности.' },
-      { icon: '✅', text: 'Задай 2–3 вопроса в конце — это показывает твой интерес.' },
-      { icon: '❌', text: 'Не говори плохо о прошлых работодателях или учителях.' },
-      { icon: '❌', text: 'Не опаздывай — даже онлайн. Подключись за 5 минут до начала.' },
-    ],
+    title: '🎤 Подготовка к интервью',
+    desc: 'Что это: Практика ответов на вопросы, которые задают на собеседовании, и обучение правилам поведения на интервью.<br>Зачем: Интервью — это возможность показать навыки, личные качества и заинтересованность в работе.<br>Для чего: Подготовка помогает быть уверенным, правильно отвечать на вопросы и производить хорошее впечатление на работодателя.',
   },
   linkedin: {
     tag: 'Карьерные ресурсы',
-    title: 'LinkedIn профиль',
-    desc: 'LinkedIn — это твоя онлайн-визитка для рекрутеров. Правильно оформленный профиль работает за тебя 24/7.',
-    videoId: 'BUEkYVGz8B0',
-    tips: [
-      { icon: '✅', text: 'Добавь профессиональное фото — профили с фото получают в 14 раз больше просмотров.' },
-      { icon: '✅', text: 'Headline: не просто "Студент", а "Frontend Developer | HTML CSS JS | Ищу стажировку".' },
-      { icon: '✅', text: 'Раздел About: 3–5 предложений о себе, навыках и цели.' },
-      { icon: '✅', text: 'Добавь учебные и личные проекты в Experience или Projects.' },
-      { icon: '❌', text: 'Не оставляй профиль пустым — даже базовая информация лучше, чем ничего.' },
-      { icon: '❌', text: 'Не рассылай запросы без персонального сообщения — пиши, почему хочешь добавиться.' },
-    ],
+    title: '🔗 LinkedIn / Профиль в профессиональной сети',
+    desc: 'Что это: Профессиональная социальная сеть, где можно создать профиль, показать навыки, опыт и проекты.<br>Зачем: Работодатели и компании ищут кандидатов на LinkedIn, а также проверяют рекомендации и проекты.<br>Для чего: Чтобы построить профессиональный бренд и увеличить шансы получить стажировку или работу.',
   },
 };
 
@@ -360,6 +324,7 @@ const state = {
   taskStep: 0,
   answers: [],
   lastApplyCompany: '',
+  currentTopic: null,
 };
 
 // ─────────────────────────────────────────────
@@ -622,27 +587,39 @@ function initApplyForm() {
 // ─────────────────────────────────────────────
 // ОБУЧЕНИЕ
 // ─────────────────────────────────────────────
+// ─────────────────────────────────────────────
+// ОБУЧЕНИЕ
+// ─────────────────────────────────────────────
+const LEARNING_TOPICS = ['cv', 'cover', 'interview', 'linkedin'];
+
 function openLearning(topic) {
   const data = LEARNING_DATA[topic];
   if (!data) return;
 
+  state.currentTopic = topic;
   showSection('learning-page');
 
   document.getElementById('learningTag').textContent = data.tag;
   document.getElementById('learning-page-heading').textContent = data.title;
-  document.getElementById('learningDesc').textContent = data.desc;
+  document.getElementById('learningDesc').innerHTML = '<p>' + data.desc.replace(/<br>/g, '</p><p>') + '</p>';
 
-  const iframe = document.getElementById('learningVideo');
-  iframe.src = toEmbedUrl(data.videoId);
-
-  // Советы
+  // Убрать видео и tips, показать только описание
+  const videoWrapper = document.querySelector('.video-wrapper');
   const tipsContainer = document.getElementById('learningTips');
-  tipsContainer.innerHTML = `
-    <h3>Ключевые советы</h3>
-    <ul class="tips-list">
-      ${data.tips.map((t) => `<li class="tip"><span class="tip__icon">${t.icon}</span><span>${t.text}</span></li>`).join('')}
-    </ul>
-  `;
+  if (videoWrapper) videoWrapper.style.display = 'none';
+  if (tipsContainer) tipsContainer.style.display = 'none';
+}
+
+function prevLearning() {
+  const currentIndex = LEARNING_TOPICS.indexOf(state.currentTopic);
+  const prevIndex = currentIndex > 0 ? currentIndex - 1 : LEARNING_TOPICS.length - 1;
+  openLearning(LEARNING_TOPICS[prevIndex]);
+}
+
+function nextLearning() {
+  const currentIndex = LEARNING_TOPICS.indexOf(state.currentTopic);
+  const nextIndex = currentIndex < LEARNING_TOPICS.length - 1 ? currentIndex + 1 : 0;
+  openLearning(LEARNING_TOPICS[nextIndex]);
 }
 
 // ─────────────────────────────────────────────
@@ -777,6 +754,14 @@ function initActions() {
 
       case 'open-learning':
         openLearning(btn.dataset.topic);
+        break;
+
+      case 'prev-learning':
+        prevLearning();
+        break;
+
+      case 'next-learning':
+        nextLearning();
         break;
 
       case 'go-back':

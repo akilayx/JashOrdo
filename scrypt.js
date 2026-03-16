@@ -131,20 +131,18 @@ function openLearning(type) {
   const title = document.getElementById("learningTitle");
   const video = document.getElementById("learningVideo");
 
-  if (type === "cv") {
-    title.innerText = "Как составить сильное CV";
-    video.src = "https://www.youtube.com/embed/6kZcJzqY9GU";
-  }
-
-  if (type === "cover") {
-    title.innerText = "Как написать Cover Letter";
-    video.src = "https://www.youtube.com/embed/Ux8pFqJdJ4A";
-  }
-
-  if (type === "interview") {
-    title.innerText = "Как пройти интервью";
-    video.src = "https://www.youtube.com/embed/7yY2B5R9YyM";
-  }
+ if(type==="cv"){
+t.innerText="Как составить CV";
+v.src="https://youtu.be/BUEkYVGz8B0?si=MTdJocw2upbzY8-u";
+}
+if(type==="cover"){
+t.innerText="Cover Letter";
+v.src="https://youtu.be/JiBz4ye5f1M?si=_a9TIfbZok_wp_E1";
+}
+if(type==="interview"){
+t.innerText="Интервью";
+v.src="https://youtu.be/q-AmQYHyCiY?si=AEW_eA9Vgxiz2LdZ";
+}
 }
 
 /* ================== КНОПКИ ================== */

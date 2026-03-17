@@ -306,13 +306,49 @@ const LEARNING_DATA = {
   },
   interview: {
     tag: 'Карьерные ресурсы',
-    title: '🎤 Подготовка к интервью',
-    desc: 'Что это: Практика ответов на вопросы, которые задают на собеседовании, и обучение правилам поведения на интервью.<br>Зачем: Интервью — это возможность показать навыки, личные качества и заинтересованность в работе.<br>Для чего: Подготовка помогает быть уверенным, правильно отвечать на вопросы и производить хорошее впечатление на работодателя.',
+    title: 'Собеседование (симуляция)',
+    desc: 'Пройди мини-собеседование и потренируй ответы как в реальной компании.',
+    simulation: [
+      {
+        question: 'Расскажите о себе',
+        placeholder: 'Я студент ..., интересуюсь ..., умею ...',
+      },
+      {
+        question: 'Почему вы хотите работать именно у нас?',
+        placeholder: 'Мне интересна ваша компания, потому что...',
+      },
+      {
+        question: 'Расскажите о ситуации, где вы решили сложную задачу',
+        placeholder: 'Ситуация: ... Задача: ... Действие: ... Результат: ...',
+      },
+      {
+        question: 'Какие у вас слабые стороны?',
+        placeholder: 'Иногда я ..., но я работаю над этим так...',
+      },
+    ],
   },
   linkedin: {
     tag: 'Карьерные ресурсы',
-    title: '🔗 LinkedIn / Профиль в профессиональной сети',
-    desc: 'Что это: Профессиональная социальная сеть, где можно создать профиль, показать навыки, опыт и проекты.<br>Зачем: Работодатели и компании ищут кандидатов на LinkedIn, а также проверяют рекомендации и проекты.<br>Для чего: Чтобы построить профессиональный бренд и увеличить шансы получить стажировку или работу.',
+    title: 'LinkedIn профиль (симуляция)',
+    desc: 'Создай свой LinkedIn профиль шаг за шагом.',
+    simulation: [
+      {
+        label: 'Имя и фамилия',
+        placeholder: 'Например: Айбек Осмонов',
+      },
+      {
+        label: 'Профессия / Headline',
+        placeholder: 'Frontend Developer | HTML CSS JS',
+      },
+      {
+        label: 'О себе (About)',
+        placeholder: 'Я начинающий разработчик...',
+      },
+      {
+        label: 'Навыки',
+        placeholder: 'HTML, CSS, JavaScript, Figma',
+      },
+    ],
   },
 };
 
@@ -593,6 +629,11 @@ function initApplyForm() {
 const LEARNING_TOPICS = ['cv', 'cover', 'interview', 'linkedin'];
 
 function openLearning(topic) {
+  if (topic === 'interview') {
+    openInterviewSimulation();
+    return;
+  }
+
   const data = LEARNING_DATA[topic];
   if (!data) return;
 
@@ -620,6 +661,160 @@ function nextLearning() {
   const currentIndex = LEARNING_TOPICS.indexOf(state.currentTopic);
   const nextIndex = currentIndex < LEARNING_TOPICS.length - 1 ? currentIndex + 1 : 0;
   openLearning(LEARNING_TOPICS[nextIndex]);
+}
+
+function openInterviewSimulation() {
+  const data = LEARNING_DATA.interview;
+  if (!data || !Array.isArray(data.simulation)) return;
+
+  state.currentTopic = 'interview';
+  showSection('learning-page');
+
+  document.getElementById('learningTag').textContent = data.tag;
+  document.getElementById('learning-page-heading').textContent = data.title;
+  document.getElementById('learningDesc').textContent = data.desc;
+
+  const videoWrapper = document.querySelector('.video-wrapper');
+  const tipsContainer = document.getElementById('learningTips');
+  if (!tipsContainer) return;
+
+  if (videoWrapper) videoWrapper.style.display = 'none';
+  tipsContainer.style.display = 'block';
+
+  let step = 0;
+  const answers = [];
+
+  function render() {
+    if (step >= data.simulation.length) {
+      tipsContainer.innerHTML = `
+        <div class="sim-complete">
+          <div class="sim-complete__icon">🎉</div>
+          <h3>Собеседование завершено!</h3>
+          <p>Ты прошел тренировку. Попробуй еще раз или подай заявку.</p>
+          <div class="sim-complete__actions">
+            <button type="button" class="btn btn--secondary" id="restartInterview">Пройти заново</button>
+            <button type="button" class="btn btn--primary" data-action="open-apply">Подать заявку</button>
+          </div>
+        </div>
+      `;
+
+      const restartBtn = document.getElementById('restartInterview');
+      if (restartBtn) {
+        restartBtn.addEventListener('click', () => {
+          step = 0;
+          answers.length = 0;
+          render();
+        });
+      }
+      return;
+    }
+
+    const q = data.simulation[step];
+    tipsContainer.innerHTML = `
+      <div class="sim-task-card">
+        <h3>${q.question}</h3>
+        <textarea id="interviewAnswer" class="sim-textarea" placeholder="${q.placeholder}" rows="5"></textarea>
+        <div class="sim-actions" style="margin-top: 16px;">
+          <button type="button" class="btn btn--secondary" id="nextInterview">Далее</button>
+        </div>
+      </div>
+    `;
+
+    const nextBtn = document.getElementById('nextInterview');
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        const input = document.getElementById('interviewAnswer');
+        const val = input ? input.value.trim() : '';
+        answers.push(val);
+        step += 1;
+        render();
+      });
+    }
+  }
+
+  render();
+}
+
+function openLinkedInBuilder() {
+  const data = LEARNING_DATA.linkedin;
+  if (!data || !Array.isArray(data.simulation)) return;
+
+  state.currentTopic = 'linkedin';
+  showSection('learning-page');
+
+  document.getElementById('learningTag').textContent = data.tag;
+  document.getElementById('learning-page-heading').textContent = data.title;
+  document.getElementById('learningDesc').textContent = data.desc;
+
+  const videoWrapper = document.querySelector('.video-wrapper');
+  const tipsContainer = document.getElementById('learningTips');
+  if (!tipsContainer) return;
+
+  if (videoWrapper) videoWrapper.style.display = 'none';
+  tipsContainer.style.display = 'block';
+
+  let step = 0;
+  const profile = {};
+
+  function render() {
+    if (step >= data.simulation.length) {
+      tipsContainer.innerHTML = `
+        <div class="sim-complete linkedin-builder-complete">
+          <div class="sim-complete__icon">🔗</div>
+          <h3>Твой LinkedIn профиль готов!</h3>
+          <div class="linkedin-preview">
+            <h4>${profile.name || ''}</h4>
+            <p class="linkedin-preview__headline"><strong>${profile.headline || ''}</strong></p>
+            <p>${profile.about || ''}</p>
+            <p><b>Навыки:</b> ${profile.skills || ''}</p>
+          </div>
+          <div class="sim-complete__actions">
+            <button type="button" class="btn btn--secondary" id="restartLinkedin">Пройти заново</button>
+            <button type="button" class="btn btn--primary" data-action="open-apply">Найти стажировку</button>
+          </div>
+        </div>
+      `;
+
+      const restartBtn = document.getElementById('restartLinkedin');
+      if (restartBtn) {
+        restartBtn.addEventListener('click', () => {
+          step = 0;
+          Object.keys(profile).forEach((key) => delete profile[key]);
+          render();
+        });
+      }
+      return;
+    }
+
+    const field = data.simulation[step];
+    tipsContainer.innerHTML = `
+      <div class="sim-task-card">
+        <h3>${field.label}</h3>
+        <textarea id="linkedinInput" class="sim-textarea" placeholder="${field.placeholder}" rows="4"></textarea>
+        <div class="sim-actions" style="margin-top: 16px;">
+          <button type="button" class="btn btn--secondary" id="nextLinkedin">Далее</button>
+        </div>
+      </div>
+    `;
+
+    const nextBtn = document.getElementById('nextLinkedin');
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        const input = document.getElementById('linkedinInput');
+        const val = input ? input.value.trim() : '';
+
+        if (step === 0) profile.name = val;
+        if (step === 1) profile.headline = val;
+        if (step === 2) profile.about = val;
+        if (step === 3) profile.skills = val;
+
+        step += 1;
+        render();
+      });
+    }
+  }
+
+  render();
 }
 
 // ─────────────────────────────────────────────
@@ -754,6 +949,10 @@ function initActions() {
 
       case 'open-learning':
         openLearning(btn.dataset.topic);
+        break;
+
+      case 'open-interview':
+        openInterviewSimulation();
         break;
 
       case 'prev-learning':

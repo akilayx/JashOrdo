@@ -476,6 +476,26 @@ select {
   transform: none !important;
 }
 
+/* Навигация между страницами */
+.page-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 2px solid var(--border);
+}
+
+.page-actions .btn {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.page-actions .btn--secondary {
+  flex: 1;
+}
+
 /* ─────────────────────────────────────────────
    7. СЕКЦИИ
 ───────────────────────────────────────────── */
@@ -1568,7 +1588,205 @@ select {
 }
 
 /* ─────────────────────────────────────────────
-   21. ТЁМНЫЙ РЕЖИМ (авто)
+   21. ОБУЧАЮЩИЕ КАТЕГОРИИ И КОНТЕНТ
+───────────────────────────────────────────── */
+
+/* Категории обучения */
+.learning-categories {
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  margin: 32px 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.learning-categories h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--deep);
+  margin-bottom: 24px;
+}
+
+.categories-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.category-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 22px;
+  background: linear-gradient(135deg, var(--cream-2) 0%, var(--white) 100%);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--deep);
+  text-decoration: none;
+  transition: all var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.category-link:hover {
+  border-color: var(--gold);
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--white) 100%);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Контент блоки (бесплатный/платный) */
+.learning-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.content-block {
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+.content-block__title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.content-block__list {
+  list-style: disc;
+  margin-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.content-block__list li {
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Бесплатный контент */
+.free-content {
+  background: var(--white);
+  border: 2px solid var(--border);
+  color: var(--text);
+}
+
+.free-content h4 {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--deep);
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+.free-content h4:first-of-type {
+  margin-top: 0;
+}
+
+.free-content p {
+  color: var(--text);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+/* Премиум контент */
+.premium-content {
+  background: linear-gradient(135deg, rgba(201, 162, 77, 0.08) 0%, rgba(201, 162, 77, 0.04) 100%);
+  border: 2px solid var(--gold);
+  border-style: dashed;
+  color: var(--text);
+}
+
+.premium-content .content-block__title {
+  color: var(--gold-dark);
+}
+
+.premium-content p {
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+/* Кнопка премиум */
+.btn--premium {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  color: var(--deep);
+  border: none;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: var(--radius-lg);
+  font-size: 0.95rem;
+  transition: all var(--transition);
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(201, 162, 77, 0.25);
+  display: inline-block;
+  margin-top: 12px;
+}
+
+.btn--premium:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 162, 77, 0.35);
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+}
+
+/* Пример CV */
+.cv-example {
+  background: var(--cream-2);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin: 20px 0;
+}
+
+.cv-example h4 {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--deep);
+  margin-bottom: 16px;
+}
+
+.cv-example pre {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--text);
+  overflow-x: auto;
+}
+
+/* ─────────────────────────────────────────────
+   22. АДАПТИВ (дополнения)
+───────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .learning-categories {
+    padding: 20px;
+  }
+
+  .categories-list {
+    grid-template-columns: 1fr;
+  }
+
+  .content-block {
+    padding: 20px;
+  }
+
+  .cv-example pre {
+    font-size: 0.75rem;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   23. ТЁМНЫЙ РЕЖИМ (авто)
 ───────────────────────────────────────────── */
 @media (prefers-color-scheme: dark) {
   :root {

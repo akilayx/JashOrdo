@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Jash Ordo — CV / Resume">
-  <title>CV / Resume — Jash Ordo</title>
+  <meta name="description" content="Структура резюме — Jash Ordo">
+  <title>Структура резюме — Jash Ordo</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,33 +36,81 @@
 
   <main id="main-content">
 
-    <!-- ========== СТРАНИЦА ОБУЧЕНИЯ ========== -->
+    <!-- ========== УЧЕБНАЯ СТРАНИЦА ========== -->
     <section id="learning-page" class="section" aria-labelledby="learning-page-heading">
       <div class="container container--narrow">
         <div class="section__head">
-          <span class="section__tag">Карьерные ресурсы</span>
-          <h2 id="learning-page-heading">📄 CV / Resume</h2>
+          <span class="section__tag">CV / Resume</span>
+          <h2 id="learning-page-heading">📋 Структура резюме для школьников и студентов</h2>
         </div>
 
-        <div id="learningDesc" class="section__sub">
-          <p>Что это: Резюме — это документ, в котором ты показываешь свои навыки, образование и опыт.</p>
-          <p>Зачем: Работодатели и компании смотрят CV, чтобы понять, кто ты и подходишь ли на стажировку или работу.</p>
-          <p>Для чего: Чтобы начать карьеру, нужно иметь аккуратное и структурированное CV — это твой первый «профессиональный паспорт».</p>
+        <!-- ✅ БЕСПЛАТНАЯ ЧАСТЬ -->
+        <div class="learning-content">
+          <div class="content-block free-content">
+            <h3 class="content-block__title">✅ Бесплатно</h3>
+            
+            <p>Правильное резюме должно быть простым, понятным и структурированным. Вот как его организовать:</p>
+
+            <h4>1️⃣ Основная информация (вверху страницы)</h4>
+            <ul class="content-block__list">
+              <li><strong>Имя и фамилия</strong> — большим шрифтом</li>
+              <li><strong>Email</strong> — корректный адрес</li>
+              <li><strong>Номер телефона</strong> — с кодом страны</li>
+              <li><strong>Город</strong> — где ты находишься</li>
+              <li><strong>LinkedIn</strong> (если есть) — ссылка на профиль</li>
+            </ul>
+
+            <h4>2️⃣ Образование</h4>
+            <p>Укажи:</p>
+            <ul class="content-block__list">
+              <li>Название школы/университета</li>
+              <li>Текущий класс/курс</li>
+              <li>Год поступления</li>
+              <li>Средний балл (GPA) если гордишься</li>
+            </ul>
+
+            <h4>3️⃣ Навыки (Skills)</h4>
+            <p>Раздели на две части:</p>
+            <ul class="content-block__list">
+              <li><strong>Hard skills:</strong> Excel, HTML, CSS, Python, Figma, 1С</li>
+              <li><strong>Soft skills:</strong> коммуникация, управление временем, лидерство</li>
+            </ul>
+
+            <h4>4️⃣ Проекты и опыт</h4>
+            <p>Даже школьные проекты — это уже опыт! Напиши:</p>
+            <ul class="content-block__list">
+              <li>Название проекта</li>
+              <li>Что ты делал</li>
+              <li>Результат (если был)</li>
+            </ul>
+
+            <h4>5️⃣ Языки</h4>
+            <p>Укажи, какие языки знаешь и уровень владения (A1, A2, B1, B2, C1, C2)</p>
+          </div>
+
+          <!-- 🔒 ПЛАТНАЯ ЧАСТЬ -->
+          <div class="content-block premium-content">
+            <h3 class="content-block__title">🔒 Доступно только по подписке</h3>
+            
+            <p>Расширенный контент для подписчиков Jash Ordo:</p>
+            <ul class="content-block__list">
+              <li>✔️ Готовые шаблоны CV в Figma</li>
+              <li>✔️ Примеры резюме, которые прошли отбор в топовые компании</li>
+              <li>✔️ Секреты оформления для ATS систем (системы автоматического распознавания)</li>
+              <li>✔️ Как правильно написать "Про себя"</li>
+              <li>✔️ Чек-лист перед отправкой резюме</li>
+            </ul>
+
+            <button class="btn btn--premium" onclick="alert('🔒 Эта функция доступна только подписчикам. Оформи подписку на платформе Jash Ordo')">
+              🔒 Открыть закрытый контент
+            </button>
+          </div>
         </div>
 
-        <div class="learning-categories">
-          <h3>📚 Выбери тему:</h3>
-          <ul class="categories-list">
-            <li><a href="cv-structure.html" class="category-link">📋 Структура резюме</a></li>
-            <li><a href="cv-no-experience.html" class="category-link">💡 Как описать опыт (если его нет)</a></li>
-            <li><a href="cv-mistakes.html" class="category-link">⚠️ Частые ошибки</a></li>
-            <li><a href="cv-examples.html" class="category-link">✨ Примеры CV</a></li>
-          </ul>
-        </div>
-
+        <!-- НАВИГАЦИЯ -->
         <div class="page-actions">
-          <a href="coverletter.html" class="btn btn--secondary">Следующий: Cover Letter →</a>
-          <a href="index.html" class="btn btn--back">← На главную</a>
+          <a href="cv-no-experience.html" class="btn btn--secondary">Следующий: Как описать опыт →</a>
+          <a href="cv.html" class="btn btn--back">← Назад к CV</a>
         </div>
       </div>
     </section>

@@ -8,17 +8,17 @@
 ───────────────────────────────────────────── */
 :root {
   /* Палитра */
-  --gold:        #c9a24d;
-  --gold-light:  #e8c97a;
-  --gold-dark:   #a07830;
-  --deep:        #1a1208;
-  --deep-2:      #2c1f0e;
-  --cream:       #fdf6e8;
-  --cream-2:     #f5ead0;
+  --gold:        #d4b359;
+  --gold-light:  #f0d999;
+  --gold-dark:   #9d6f2a;
+  --deep:        #2a1f12;
+  --deep-2:      #3d2e18;
+  --cream:       #fffbf3;
+  --cream-2:     #f8f1e3;
   --white:       #ffffff;
   --text:        #1a1208;
-  --text-muted:  #6b5a3e;
-  --border:      #e2d4b8;
+  --text-muted:  #5a4a33;
+  --border:      #e8dcc8;
   --error:       #c0392b;
   --success:     #27ae60;
 
@@ -1782,6 +1782,42 @@ select {
 
   .cv-example pre {
     font-size: 0.75rem;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   22.5 МОБИЛЬНАЯ ВИДИМОСТЬ (улучшение контраста)
+───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  body {
+    /* Легкий фильтр для улучшения контраста на ярких экранах */
+    background: var(--cream);
+  }
+
+  /* Усиление контраста текста на мобильных */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+
+  /* Кнопки более видны */
+  .btn {
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+
+  /* Карточки с лучшим контрастом */
+  .card {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Текст в карточках более контрастный */
+  .card h3 {
+    color: var(--deep);
+  }
+
+  .card p {
+    color: var(--text-muted);
   }
 }
 

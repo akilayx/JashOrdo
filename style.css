@@ -1382,6 +1382,50 @@ select {
 }
 
 /* ─────────────────────────────────────────────
+   Детали стажировки (internships.html)
+───────────────────────────────────────────── */
+.intern-detail-body {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.intern-detail-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  margin-bottom: 14px;
+  color: var(--deep);
+}
+
+.intern-detail-body ol,
+.intern-detail-body ul {
+  list-style: decimal;
+  padding-left: 22px;
+  color: var(--text-muted);
+}
+
+.intern-detail-body li + li {
+  margin-top: 8px;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 24px;
+}
+
+.sim-complete_actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ─────────────────────────────────────────────
    18. ЭТНО-ОРНАМЕНТЫ (дополнительные декоры)
 ───────────────────────────────────────────── */
 

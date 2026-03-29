@@ -991,4 +991,225 @@ document.addEventListener('DOMContentLoaded', () => {
     el.style.display = 'none';
     el.setAttribute('aria-hidden', 'true');
   });
+
+  initInternshipsInteractive();
 });
+
+// ====== internships.html: список -> детали -> симуляция ======
+function initInternshipsInteractive() {
+  const listSection = document.getElementById('internships-full');
+  const detailSection = document.getElementById('intern-detail');
+  const simulationSection = document.getElementById('simulation');
+
+  if (!listSection || !detailSection || !simulationSection) return;
+
+  // ====== Данные о стажировках ======
+  const internshipsData = [
+    {
+      id: 'frontend',
+      title: 'Frontend Developer Internship',
+      tag: '💻 Виртуальная стажировка',
+      description: 'Изучи HTML, CSS, JavaScript и собери мини-проект.',
+      details:
+        '<h3>Как подать заявку</h3><ol><li>Пройди 3 задания в виртуальной симуляции ниже.</li><li>Получишь сертификат и можешь подать заявку онлайн.</li><li>Топ-участники получают приглашение от компаний-партнеров.</li></ol>',
+      isVirtual: true,
+    },
+    {
+      id: 'marketing',
+      title: 'Marketing & Digital Strategy',
+      tag: '📣 Реальная стажировка',
+      description: 'Стажировка с проектами в SMM и digital-рекламе.',
+      details:
+        '<h3>Как подать заявку</h3><ol><li>Заполни анкету с кратким описанием своих интересов.</li><li>Выполни тестовое задание по продвижению бренда.</li><li>Дождись результата и приглашения на интервью.</li></ol>',
+      isVirtual: false,
+    },
+    {
+      id: 'data',
+      title: 'Data Analytics (MBank — весенняя программа)',
+      tag: '📊 Для школьников',
+      description: 'Анализируй реальные данные банка и создавай отчеты.',
+      details:
+        '<p>Трек для учеников 9-11 классов. Под присмотром наставников участники выполняют задачи по аналитике и получают сертификат.</p>',
+      isVirtual: false,
+    },
+  ];
+
+  const internTag = document.getElementById('internTag');
+  const internTitle = document.getElementById('internTitle');
+  const internDesc = document.getElementById('internDesc');
+  const internBody = document.getElementById('internBody');
+  const startVirtualBtn = document.getElementById('startVirtualBtn');
+  const applyBtn = document.getElementById('applyBtn');
+  const backToList = document.getElementById('backToList');
+
+  const simHeading = document.getElementById('sim-heading');
+  const simCompanyTag = document.getElementById('simCompanyTag');
+  const simDesc = document.getElementById('simDesc');
+  const simTaskTitle = document.getElementById('simTaskTitle');
+  const simTaskText = document.getElementById('simTaskText');
+  const simTaskCard = document.getElementById('simTaskCard');
+  const simInput = document.getElementById('simInput');
+  const simComplete = document.getElementById('simComplete');
+  const simActions = document.getElementById('simActionsLocal');
+  const nextTaskBtn = document.getElementById('nextTaskBtn');
+  const exitSimBtn = document.getElementById('exitSimBtn');
+  const applyAfterSim = document.getElementById('applyAfterSim');
+  const backToInternships = document.getElementById('backToInternships');
+
+  if (
+    !internTag ||
+    !internTitle ||
+    !internDesc ||
+    !internBody ||
+    !startVirtualBtn ||
+    !applyBtn ||
+    !backToList ||
+    !simHeading ||
+    !simCompanyTag ||
+    !simDesc ||
+    !simTaskTitle ||
+    !simTaskText ||
+    !simTaskCard ||
+    !simInput ||
+    !simComplete ||
+    !simActions ||
+    !nextTaskBtn ||
+    !exitSimBtn ||
+    !applyAfterSim ||
+    !backToInternships
+  ) {
+    return;
+  }
+
+  let selectedIntern = null;
+
+  function retriggerFadeIn(el) {
+    el.classList.remove('fade-in');
+    void el.offsetWidth;
+    el.classList.add('fade-in');
+  }
+
+  function showList() {
+    listSection.classList.remove('hidden');
+    listSection.style.display = '';
+
+    detailSection.classList.add('hidden');
+    detailSection.style.display = 'none';
+
+    simulationSection.classList.add('hidden');
+    simulationSection.style.display = 'none';
+
+    // Reset simulation UI when user returns to list.
+    simTaskCard.classList.remove('hidden');
+    simActions.classList.remove('hidden');
+    simComplete.classList.add('hidden');
+    simInput.value = '';
+  }
+
+  function showDetail() {
+    listSection.classList.add('hidden');
+    listSection.style.display = 'none';
+
+    detailSection.classList.remove('hidden');
+    detailSection.style.display = '';
+    retriggerFadeIn(detailSection.querySelector('.container') || detailSection);
+
+    simulationSection.classList.add('hidden');
+    simulationSection.style.display = 'none';
+  }
+
+  function showSimulation() {
+    listSection.classList.add('hidden');
+    listSection.style.display = 'none';
+
+    detailSection.classList.add('hidden');
+    detailSection.style.display = 'none';
+
+    simulationSection.classList.remove('hidden');
+    simulationSection.style.display = '';
+    retriggerFadeIn(simulationSection.querySelector('.container') || simulationSection);
+  }
+
+  // ====== Переход из списка в детали ======
+  document.querySelectorAll('[data-intern]').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const id = e.currentTarget.getAttribute('data-intern');
+      const info = internshipsData.find((i) => i.id === id);
+      if (!info) return;
+
+      selectedIntern = info;
+      internTag.textContent = info.tag;
+      internTitle.textContent = info.title;
+      internDesc.textContent = info.description;
+      internBody.innerHTML = info.details;
+      startVirtualBtn.style.display = info.isVirtual ? 'inline-flex' : 'none';
+      simCompanyTag.textContent = info.tag;
+      showDetail();
+    });
+  });
+
+  // ====== Кнопка Назад ======
+  backToList.addEventListener('click', () => {
+    showList();
+  });
+
+  applyBtn.addEventListener('click', () => {
+    window.location.href = 'index.html#contact';
+  });
+
+  // ====== Простая симуляция ======
+  const tasks = [
+    { title: 'Задание 1: Верстка', text: 'Создай базовую страницу с заголовком и кнопкой.' },
+    { title: 'Задание 2: Стили', text: 'Добавь CSS, чтобы кнопка выглядела современно.' },
+    { title: 'Задание 3: JS', text: "Сделай так, чтобы при нажатии кнопка выводила 'Hello, Jash Ordo!'." },
+  ];
+  let currentTask = 0;
+
+  function showTask() {
+    const task = tasks[currentTask];
+    simTaskTitle.textContent = task.title;
+    simTaskText.textContent = task.text;
+    simInput.value = '';
+    simTaskCard.classList.remove('hidden');
+    simActions.classList.remove('hidden');
+    simComplete.classList.add('hidden');
+  }
+
+  function launchSimulation() {
+    simHeading.textContent = 'Виртуальная стажировка: Frontend';
+    simDesc.textContent = 'Выполни 3 задания, чтобы завершить симуляцию и получить сертификат.';
+    simCompanyTag.textContent = '💻 Виртуальная стажировка';
+    currentTask = 0;
+    showTask();
+  }
+
+  // ====== Запуск виртуальной стажировки ======
+  startVirtualBtn.addEventListener('click', () => {
+    if (!selectedIntern || !selectedIntern.isVirtual) return;
+    showSimulation();
+    launchSimulation();
+  });
+
+  nextTaskBtn.addEventListener('click', () => {
+    if (currentTask < tasks.length - 1) {
+      currentTask += 1;
+      showTask();
+      return;
+    }
+    simTaskCard.classList.add('hidden');
+    simActions.classList.add('hidden');
+    simComplete.classList.remove('hidden');
+  });
+
+  exitSimBtn.addEventListener('click', () => {
+    showDetail();
+  });
+
+  applyAfterSim.addEventListener('click', () => {
+    window.location.href = 'index.html#contact';
+  });
+
+  backToInternships.addEventListener('click', () => {
+    showList();
+  });
+}

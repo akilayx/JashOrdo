@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Все стажировки — Jash Ordo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <nav class="navbar">
+    <a href="index.html" class="logo">❧ Jash Ordo</a>
+  </nav>
+</header>
+
+<main class="section" id="internships-full">
+  <div class="container">
+    <div class="section_head section__head">
+      <span class="sectiontag section__tag">Стажировки и программы</span>
+      <h2>Все возможности</h2>
+      <p class="section__sub">Открой реальные и виртуальные стажировки в Кыргызстане.</p>
+    </div>
+
+    <ul class="cards cards--large cards--wide" role="list">
+      <li class="card card--hover card--visible">
+        <div class="cardicon card__icon">💻</div>
+        <h3>Frontend Developer Internship</h3>
+        <p>3-недельная виртуальная симуляция по HTML, CSS и JS.</p>
+        <button type="button" class="btn btn--secondary" data-intern="frontend">
+          Подробнее
+        </button>
+      </li>
+
+      <li class="card card--hover card--visible">
+        <div class="cardicon card__icon">📣</div>
+        <h3>Marketing & Digital Strategy</h3>
+        <p>Стажировка с реальными брендами и аналитикой.</p>
+        <button type="button" class="btn btn--secondary" data-intern="marketing">
+          Подробнее
+        </button>
+      </li>
+
+      <li class="card card--hover card--visible">
+        <div class="cardicon card__icon">📊</div>
+        <h3>Data Analytics (MBank)</h3>
+        <p>Весенняя программа для школьников с сертификатом.</p>
+        <button type="button" class="btn btn--secondary" data-intern="data">
+          Подробнее
+        </button>
+      </li>
+    </ul>
+  </div>
+</main>
+
+<!-- ========== ДЕТАЛИ СТАЖИРОВКИ ========== -->
+<section id="intern-detail" class="section page-view hidden" aria-hidden="true">
+  <div class="container container--narrow fade-in">
+    <div class="sectionhead section__head">
+      <span class="sectiontag section__tag" id="internTag"></span>
+      <h2 id="internTitle"></h2>
+      <p id="internDesc" class="sectionsub section__sub"></p>
+    </div>
+
+    <div id="internBody" class="intern-detail-body"></div>
+
+    <div class="detail-actions">
+      <button type="button" class="btn btn--primary" id="startVirtualBtn">💻 Начать виртуальную стажировку</button>
+      <button type="button" class="btn btn--outline" id="applyBtn">✉️ Подать заявку</button>
+      <button type="button" class="btn btn--back" id="backToList">← Назад</button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ВИРТУАЛЬНАЯ СТАЖИРОВКА ========== -->
+<section id="simulation" class="section page-view hidden" aria-hidden="true">
+  <div class="container container--narrow fade-in">
+    <span id="simCompanyTag" class="section__tag"></span>
+    <h2 id="sim-heading"></h2>
+    <p id="simDesc" class="sim-desc"></p>
+
+    <div class="sim-task-card" id="simTaskCard">
+      <h3 id="simTaskTitle"></h3>
+      <p id="simTaskText"></p>
+      <textarea id="simInput" class="sim-textarea" rows="4" placeholder="Ответ или ссылка..."></textarea>
+    </div>
+
+    <div class="sim-actions" id="simActionsLocal">
+      <button class="btn btn--primary" id="nextTaskBtn" type="button">Следующее задание →</button>
+      <button class="btn btn--back" id="exitSimBtn" type="button">← Назад</button>
+    </div>
+
+    <div id="simComplete" class="hidden sim-complete">
+      <div class="sim-completeicon sim-complete__icon">🎉</div>
+      <h3>Поздравляем!</h3>
+      <p>Ты завершил виртуальную стажировку. Можешь получить сертификат и подать заявку.</p>
+      <div class="sim-complete_actions sim-complete__actions">
+        <button class="btn btn--primary" id="applyAfterSim" type="button">Подать заявку</button>
+        <button class="btn btn--back" id="backToInternships" type="button">На главную</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">© 2026 Jash Ordo</div>
+</footer>
+
+<script src="scrypt.js" defer></script>
+</body>
+</html>

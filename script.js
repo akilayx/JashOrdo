@@ -379,7 +379,6 @@ function showSection(id) {
   hideAll();
   const el = document.getElementById(id);
   if (!el) return;
-  el.classList.remove('hidden');
   el.style.display = '';
   el.removeAttribute('aria-hidden');
   el.classList.add('fade-in');
@@ -960,10 +959,6 @@ function initActions() {
 
       case 'open-interview':
         openInterviewSimulation();
-        break;
-
-      case 'open-linkedin':
-        openLinkedInBuilder();
         break;
 
       case 'prev-learning':

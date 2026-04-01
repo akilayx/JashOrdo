@@ -1893,8 +1893,224 @@ select {
 }
 
 /* ─────────────────────────────────────────────
+   22b. КАРТОЧКИ СТАЖИРОВОК (internships-page)
+───────────────────────────────────────────── */
+.intern-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.intern-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 28px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.intern-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+}
+
+.intern-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.intern-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.intern-card__icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.intern-card__tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-dark);
+  background: rgba(201,162,77,0.1);
+  border: 1px solid rgba(201,162,77,0.25);
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+
+.intern-card__title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--deep);
+  line-height: 1.25;
+  margin: 0;
+}
+
+.intern-card__subtitle {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: -8px 0 0;
+}
+
+.intern-card__meta {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px;
+  background: var(--cream-2);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.intern-card__meta li span {
+  font-weight: 600;
+  margin-right: 4px;
+  color: var(--text-muted);
+}
+
+.intern-card__criteria {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+.intern-card__criteria li {
+  padding-left: 16px;
+  position: relative;
+}
+
+.intern-card__criteria li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.intern-card .btn {
+  margin-top: auto;
+  width: 100%;
+  justify-content: center;
+}
+
+/* ─────────────────────────────────────────────
    23. ТЁМНЫЙ РЕЖИМ (авто)
 ───────────────────────────────────────────── */
+.intern-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.intern-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.intern-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.intern-card__icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.intern-card__tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  background: rgba(201, 162, 77, 0.12);
+  border: 1px solid rgba(201, 162, 77, 0.28);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.intern-card__title {
+  font-family: var(--font-display);
+  color: var(--deep);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.intern-card__subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.intern-card__meta,
+.intern-card__criteria {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.intern-card__meta {
+  background: var(--cream-2);
+  border-radius: var(--radius-sm);
+  padding: 10px;
+}
+
+.intern-card__meta li,
+.intern-card__criteria li {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.intern-card__meta li span {
+  font-weight: 700;
+  color: var(--deep);
+}
+
+.intern-card__criteria li {
+  position: relative;
+  padding-left: 14px;
+}
+
+.intern-card__criteria li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--gold-dark);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --cream:       #1e1508;

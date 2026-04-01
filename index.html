@@ -144,7 +144,7 @@
             <div class="card__icon">💻</div>
             <h3>Frontend Developer</h3>
             <p>HTML / CSS / JavaScript</p>
-            <button type="button" class="btn btn--secondary" data-action="open-internships">
+            <button type="button" class="btn btn--secondary" data-action="open-simulation" data-track="Frontend — MBank">
               Смотреть
             </button>
           </li>
@@ -152,7 +152,7 @@
             <div class="card__icon">📣</div>
             <h3>Маркетолог</h3>
             <p>SMM / аналитика</p>
-            <button type="button" class="btn btn--secondary" data-action="open-internships">
+            <button type="button" class="btn btn--secondary" data-action="open-simulation" data-track="Маркетинг — IT Agency">
               Смотреть
             </button>
           </li>
@@ -160,7 +160,7 @@
             <div class="card__icon">📊</div>
             <h3>Data Analyst</h3>
             <p>Excel / SQL / Python</p>
-            <button type="button" class="btn btn--secondary" data-action="open-internships">
+            <button type="button" class="btn btn--secondary" data-action="open-simulation" data-track="Data Analyst — MBank">
               Смотреть
             </button>
           </li>
@@ -199,55 +199,87 @@
         </div>
 
         <div id="allInternships">
-          <h3>Стажировки</h3>
-          <h4>Популярные направления</h4>
+          <div class="intern-cards">
+            <div class="intern-card" data-category="it">
+              <div class="intern-card__head">
+                <span class="intern-card__icon">📊</span>
+                <span class="intern-card__tag">МБАНК • Для школьников</span>
+              </div>
+              <h3 class="intern-card__title">Data Analytics</h3>
+              <p class="intern-card__subtitle">весенняя программа</p>
+              <ul class="intern-card__meta">
+                <li><span>Кому:</span> школьники 9-11 классов (15-18 лет)</li>
+                <li><span>Формат:</span> онлайн + мини-проект</li>
+                <li><span>Период:</span> март-апрель</li>
+                <li><span>Дедлайн:</span> 1 марта</li>
+              </ul>
+              <ul class="intern-card__criteria">
+                <li>пройти виртуальную стажировку по Data Analytics на Jash Ordo</li>
+                <li>базовые знания Excel или Google Sheets</li>
+                <li>интерес к анализу данных</li>
+              </ul>
+            </div>
 
-          <ol>
-            <li>
-              <strong>Data Analytics (МБАНК — весенняя программа)</strong><br>
-              Для кого: школьники 9–11 классов (15–18 лет)<br>
-              Формат: онлайн + мини-проект<br>
-              Период: весенние каникулы (март–апрель)<br>
-              Дедлайн подачи: 1 марта<br>
-              Критерии:<br>
-              - пройти виртуальную стажировку по Data Analytics на платформе Jash Ordo<br>
-              - базовые знания Excel или Google Sheets<br>
-              - интерес к анализу данных
-            </li>
-            <li>
-              <strong>Web Development Internship</strong><br>
-              Для кого: школьники и студенты (16–22 лет)<br>
-              Формат: онлайн / гибридный<br>
-              Продолжительность: 4–6 недель<br>
-              Дедлайн подачи: 20 февраля<br>
-              Критерии:<br>
-              - завершить виртуальную стажировку по веб-разработке на Jash Ordo<br>
-              - базовые знания HTML, CSS, JavaScript<br>
-              - портфолио или небольшой проект
-            </li>
-            <li>
-              <strong>Marketing & Digital Strategy</strong><br>
-              Для кого: студенты (17–23 лет)<br>
-              Формат: онлайн<br>
-              Продолжительность: 1 месяц<br>
-              Дедлайн: 10 марта<br>
-              Критерии:<br>
-              - пройти симуляцию маркетинговой стажировки на Jash Ordo<br>
-              - навыки анализа аудитории<br>
-              - интерес к рекламе и соцсетям
-            </li>
-            <li>
-              <strong>AI & Technology Exploration Program</strong><br>
-              Для кого: школьники 10–11 классов<br>
-              Формат: онлайн-лагерь на каникулах<br>
-              Продолжительность: 2 недели<br>
-              Дедлайн: 15 марта<br>
-              Критерии:<br>
-              - пройти виртуальную AI-стажировку на Jash Ordo<br>
-              - базовое понимание технологий<br>
-              - мотивационное эссе
-            </li>
-          </ol>
+            <div class="intern-card" data-category="it">
+              <div class="intern-card__head">
+                <span class="intern-card__icon">💻</span>
+                <span class="intern-card__tag">Веб-разработка</span>
+              </div>
+              <h3 class="intern-card__title">Web Development Internship</h3>
+              <p class="intern-card__subtitle">HTML / CSS / JavaScript</p>
+              <ul class="intern-card__meta">
+                <li><span>Кому:</span> школьники и студенты (16-22 лет)</li>
+                <li><span>Формат:</span> онлайн / гибридный</li>
+                <li><span>Срок:</span> 4-6 недель</li>
+                <li><span>Дедлайн:</span> 20 февраля</li>
+              </ul>
+              <ul class="intern-card__criteria">
+                <li>завершить виртуальную стажировку по веб-разработке на Jash Ordo</li>
+                <li>базовые знания HTML, CSS, JavaScript</li>
+                <li>портфолио или небольшой проект</li>
+              </ul>
+            </div>
+
+            <div class="intern-card" data-category="marketing">
+              <div class="intern-card__head">
+                <span class="intern-card__icon">📣</span>
+                <span class="intern-card__tag">Маркетинг</span>
+              </div>
+              <h3 class="intern-card__title">Marketing &amp; Digital Strategy</h3>
+              <p class="intern-card__subtitle">SMM / аналитика</p>
+              <ul class="intern-card__meta">
+                <li><span>Кому:</span> студенты (17-23 лет)</li>
+                <li><span>Формат:</span> онлайн</li>
+                <li><span>Срок:</span> 1 месяц</li>
+                <li><span>Дедлайн:</span> 10 марта</li>
+              </ul>
+              <ul class="intern-card__criteria">
+                <li>пройти симуляцию маркетинговой стажировки на Jash Ordo</li>
+                <li>навыки анализа аудитории</li>
+                <li>интерес к рекламе и соцсетям</li>
+              </ul>
+            </div>
+
+            <div class="intern-card" data-category="it">
+              <div class="intern-card__head">
+                <span class="intern-card__icon">🤖</span>
+                <span class="intern-card__tag">Технологии</span>
+              </div>
+              <h3 class="intern-card__title">AI &amp; Technology Exploration Program</h3>
+              <p class="intern-card__subtitle">онлайн-лагерь</p>
+              <ul class="intern-card__meta">
+                <li><span>Кому:</span> школьники 10-11 классов</li>
+                <li><span>Формат:</span> онлайн-лагерь на каникулах</li>
+                <li><span>Срок:</span> 2 недели</li>
+                <li><span>Дедлайн:</span> 15 марта</li>
+              </ul>
+              <ul class="intern-card__criteria">
+                <li>пройти виртуальную AI-стажировку на Jash Ordo</li>
+                <li>базовое понимание технологий</li>
+                <li>мотивационное эссе</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div class="page-actions">
@@ -372,29 +404,30 @@
     <div class="stories-container">
 
     <div class="story">
-
-    <img src="images/Алина-photo.jpg">
-
-    <h3>Алина — IT стажировка</h3>
-    <p>Алина, ученица 11 класса, нашла стажировку через Jash Ordo и получила возможность поработать над веб-проектами. Благодаря этой возможности она приобрела практический опыт, развила свои навыки и смогла попробовать себя в реальной рабочей среде..</p>
+      <img src="images/Алина-photo.jpg" alt="Алина">
+      <h3>Алина — IT стажировка</h3>
+      <p>Алина, ученица 11 класса, нашла стажировку через Jash Ordo и получила возможность поработать над веб-проектами. Благодаря этой возможности она приобрела практический опыт, развила свои навыки и смогла попробовать себя в реальной рабочей среде.</p>
+      <button type="button" class="btn btn--secondary" data-action="open-simulation" data-track="Frontend — MBank">
+        Попробовать как Алина
+      </button>
     </div>
 
-
     <div class="story">
-
-    <img src="images/Даниил-photo.jpg">
-
-    <h3>Даниил — маркетинг</h3>
-    <p>Даниил, ученик 10 класса, в своём возрасте смог попасть на стажировку и проработал там целый месяц. За это время он участвовал в рекламных кампаниях и научился анализировать аудиторию, получив ценный практический опыт в маркетинге и работе с проектами.</p>
+      <img src="images/Даниил-photo.jpg" alt="Даниил">
+      <h3>Даниил — маркетинг</h3>
+      <p>Даниил, ученик 10 класса, в своём возрасте смог попасть на стажировку и проработал там целый месяц. За это время он участвовал в рекламных кампаниях и научился анализировать аудиторию, получив ценный практический опыт в маркетинге и работе с проектами.</p>
+      <button type="button" class="btn btn--secondary" data-action="open-simulation" data-track="Маркетинг — IT Agency">
+        Попробовать как Даниил
+      </button>
     </div>
 
-
     <div class="story">
-
-    <img src="images/Айжан-photo.jpg">
-
-    <h3>Айжан — финтех</h3>
-    <p>Айжан, студентка 3 курса, прошла стажировку в финансовой компании и получила первый опыт.</p>
+      <img src="images/Айжан-photo.jpg" alt="Айжан">
+      <h3>Айжан — финтех</h3>
+      <p>Айжан, студентка 3 курса, прошла стажировку в финансовой компании и получила первый опыт.</p>
+      <button type="button" class="btn btn--secondary" data-action="open-simulation" data-track="Fintech — Салым Финанс">
+        Попробовать как Айжан
+      </button>
     </div>
 
     </div>
